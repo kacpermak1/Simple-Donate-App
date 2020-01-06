@@ -7,8 +7,8 @@ class Nav extends Component {
         return (
             <div className='navList'>
                 <ul>
-                    <li><Link to="start">Start</Link></li>
-                    <li><Link to="aboutApp">O co chodzi?</Link></li>
+                    <li><Link activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>Start</Link></li>
+                    <li><Link activeClass="active" to="threeCols" spy={true} smooth={true} offset={50} duration={500}>O co chodzi?</Link></li>
                     <li><Link to="aboutUs">O nas</Link></li>
                     <li><Link to="whoWeHelp">Fundacja i organizacje</Link></li>
                     <li><Link to="contact">Kontakt</Link></li>

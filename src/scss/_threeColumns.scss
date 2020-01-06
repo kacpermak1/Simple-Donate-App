@@ -1,0 +1,41 @@
+.threeColumns {
+  width: 100%;
+  height: 38vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $color-main;
+  margin: 0 auto;
+  div {
+    @extend .threeColumns;
+    height: 100%;
+    .column {
+      width: 24%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $color-background;
+      h2 {
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: $color-text;
+        text-transform: uppercase;
+      }
+      p {
+        font-family: $font-alt;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1.6;
+        color: $color-text;
+      }
+    }
+  }
+}

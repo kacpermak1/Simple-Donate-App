@@ -6,7 +6,7 @@ import Title from './title';
 class HeaderMain extends Component {
     render() {
         return (
-            <div className="headerMain">
+            <div className="headerMain" id="home">
                 <div className="headerImage">
                 </div>
                 <div className="headerRight">

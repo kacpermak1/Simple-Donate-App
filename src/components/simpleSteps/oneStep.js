@@ -7,7 +7,7 @@ class Step extends Component{
             <div>
                 <div className="stepPicture"></div>
                 <h3>{this.props.step}</h3>
-                <div class="stepUnderline"></div>
+                <div className="stepUnderline"></div>
                 <p>{this.props.text}</p>
             </div>
         )

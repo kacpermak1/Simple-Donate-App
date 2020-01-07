@@ -1,0 +1,64 @@
+.aboutUs {
+  width: 100%;
+  height: 80vh;
+  background-color: $color-base;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  div {
+    @extend .aboutUs;
+    height: 100%;
+    .aboutUsContent {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $color-text;
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1.4rem;
+      }
+      .decoration {
+        @include decoration;
+        margin-bottom: 2.2rem;
+      }
+      p {
+        width: 70%;
+        height: 28%;
+        max-height: 28%;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 1.7;
+        letter-spacing: -0.6px;
+        overflow:auto;
+      }
+      .signatureSpace {
+        width: 100%;
+        height: 24%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        .aboutUsSignature {
+          width: 50%;
+          height: 100%;
+          background-image: url("./../assets/Signature.svg");
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .aboutUsImage {
+      width: 50%;
+      height: 100%;
+      background-image: url("./../assets/People.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}

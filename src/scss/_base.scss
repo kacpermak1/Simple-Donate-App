@@ -23,3 +23,13 @@ body {
   text-transform: uppercase;
   line-height: 1.2;
 }
+
+@mixin decoration {
+  width: 18vw;
+  height: 6vh;
+  background-image: url(./../assets/Decoration.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 1.4rem;
+}

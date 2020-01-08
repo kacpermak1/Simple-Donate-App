@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import HeaderMain from './header/headerMain';
-import ThreeColumns from './threeColumns/threeColumns';
-import SimpleStepsSection from './simpleSteps/simpleStepsSection';
+import ThreeColumns from './ThreeColumns/ThreeColumns';
+import SimpleStepsSection from './simpleSteps/SimpleStepsSection';
 import AboutUsSection from './aboutUs/aboutUsSection';
-import WhoWeHelp from './whoWeHelp/whoWheHelpSection';
+import WhoWeHelp from './WhoWeHelp/WhoWheHelp';
+import Contact from './Contact/Contact';
 
 class Home extends Component {
     render() {
@@ -14,6 +15,7 @@ class Home extends Component {
                 <SimpleStepsSection />
                 <AboutUsSection />
                 <WhoWeHelp />
+                <Contact />
             </>
         )
     }

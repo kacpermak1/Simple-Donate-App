@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import BagsColumn from './bagsColumn';
-import CollectionsColumn from './collectionsCollumn';
-import OrganisationsColumn from './organisationsColumn';
+import BagsColumn from './BagsColumn';
+import CollectionsColumn from './CollectionsCollumn';
+import OrganisationsColumn from './OrganisationsColumn';
 
 
 class ThreeColumns extends Component {

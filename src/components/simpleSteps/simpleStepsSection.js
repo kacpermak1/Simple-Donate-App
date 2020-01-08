@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AllSteps from './allSteps';
+import AllSteps from './AllSteps';
 import { Link } from 'react-router-dom'
 
 class SimpleStepsSection extends Component {

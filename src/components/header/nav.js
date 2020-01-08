@@ -10,8 +10,8 @@ class Nav extends Component {
                     <li><Link activeClass="active" to="home" spy={true} smooth={true} offset={50} duration={500}>Start</Link></li>
                     <li><Link activeClass="active" to="steps" spy={true} smooth={true} offset={50} duration={500}>O co chodzi?</Link></li>
                     <li><Link activeClass="active" to="aboutUs" spy={true} smooth={true} offset={50} duration={500}>O nas</Link></li>
-                    <li><Link activeClass="active" to="whoWeHelp" spy={true} smooth={true} offset={50} duration={500}>Fundacja i organizacje</Link></li>
-                    <li><Link to="contact">Kontakt</Link></li>
+                    <li><Link activeClass="active" to="whoWeHelp" spy={true} smooth={true} offset={0} duration={500}>Fundacja i organizacje</Link></li>
+                    <li><Link activeClass="active" to="contact" spy={true} smooth={true} offset={50} duration={500}>Kontakt</Link></li>
                 </ul>
             </div>
         )

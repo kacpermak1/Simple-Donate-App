@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Step from './oneStep';
+import Step from './OneStep';
 
 class AllSteps extends Component {
     render() {

@@ -46,7 +46,7 @@ class WhoWeHelp extends Component {
             pageNumbers.push(elem);
         }
         return (
-            <section className="whoWeHelp container">
+            <section className="whoWeHelp container" id="whoWeHelp">
                 <nav>
                     <h2>Komu pomagamy?</h2>
                     <div className="decoration"></div>

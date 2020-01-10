@@ -32,7 +32,7 @@ class Contact extends Component {
             this.setState({wrongNameText:'Podane imię jest nieprawidłowe!'});
         }else{this.setState({wrongNameText:''})};
 
-        if (email.length < 0 || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) !== true) {
+        if (email.length <= 0 || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) !== true) {
             err.push('err');
             this.setState({wrongEmailText:'Podany email jest nieprawidłowy!'});
         }else{this.setState({wrongEmailText:''})};
@@ -72,7 +72,7 @@ class Contact extends Component {
         if(endText.length > 0){ submitJsx = <p className="submitText">{endText}</p>}
 
         return (
-            <section className="contact">
+            <section className="contact" id="contact">
                 <div className="formContainer">
                     <h2>Skontaktuj się z nami</h2>
                     <div className="decoration"></div>
@@ -80,18 +80,18 @@ class Contact extends Component {
                     <form method="POST" onSubmit={this.handleSubmit}>
                         <div className="inputsTop">
                             <div>
-                                <label>Wpisz swoje imię</label>
-                                <input type="text" name="NAME" placeholder="Krzysztof" value={name} onChange={this.handleChangeName}></input>
+                                <label htmlFor="name">Wpisz swoje imię</label>
+                                <input type="text" name="NAME" placeholder="Krzysztof" id="name" value={name} onChange={this.handleChangeName}></input>
                                 {nameErrorJsx}
                             </div>
                             <div>
-                                <label>Wpisz swój email</label>
-                                <input type="email" name="EMAIL" placeholder="abc@xyz.pl" value={email} onChange={this.handleChangeEmail}></input>
+                                <label htmlFor="email">Wpisz swój email</label>
+                                <input type="email" name="EMAIL" placeholder="abc@xyz.pl" id="email" value={email} onChange={this.handleChangeEmail}></input>
                                 {emailErrorJsx}
                             </div>
                         </div>
                         <div className="inputBottom">
-                            <label>Wpisz swoją wiadomość</label>
+                            <label htmlFor="message">Wpisz swoją wiadomość</label>
                             <textarea onChange={this.handleChangeMessage} value={message} id="message" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
                             {messageErrorJsx}
                         </div>

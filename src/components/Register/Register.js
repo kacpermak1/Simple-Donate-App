@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import LoginNav from './../header/loginNav';
 import Nav from './../Login/Nav';
+import { FirebaseContext, withFirebase } from '../Firebase';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 
 const errorStyle = {
     fontSize: "13px",
@@ -13,7 +16,9 @@ const errorStyle = {
     whiteSpace: "nowrap"
 }
 
-class Register extends Component {
+const borderNone = { border: "none" };
+
+class RegisterFormBase extends Component {
 
     state = {
         emailText: "",
@@ -21,7 +26,8 @@ class Register extends Component {
         passwordConfirmText: "",
         wrongEmailText: "",
         wrongPasswordText: "",
-        wrongPasswordConfirmText: ""
+        wrongPasswordConfirmText: "",
+        error: false
     }
 
     handleEmailChange = (e) => {
@@ -63,21 +69,63 @@ class Register extends Component {
             this.setState({ wrongPasswordConfirmText: '' });
         }
 
-        if (err.length === 0) { console.log('zarejestrowano'); this.setState({ emailText: '', passwordText: '', passwordConfirmText: '' }) };
+        if (err.length === 0) {
+            this.props.firebase
+                .doCreateUserWithEmailAndPassword(emailText, passwordText)
+                .then(authUser => {
+                    this.setState({ emailText: '', passwordText: '', passwordConfirmText: '' });
+                    sessionStorage.setItem("email", `${authUser.user.email}`);
+                    this.props.history.push('/');
+                })
+                .catch(error => {
+                    this.setState({ error: true, wrongEmailText: 'Konto z tym adresem email już istnieje!' });
+                })
+        };
     };
 
     render() {
 
-        const { wrongEmailText, wrongPasswordText, wrongPasswordConfirmText, emailText, passwordText, passwordConfirmText } = this.state;
+        const { wrongEmailText, wrongPasswordText, wrongPasswordConfirmText, emailText, passwordText, passwordConfirmText, error } = this.state;
 
         let emailErrorJsx = null;
         let passwordErrorJsx = null;
         let passwordConfirmErrorJsx = null;
 
-        if(wrongEmailText.length > 0){emailErrorJsx = <h3 style={errorStyle}>{wrongEmailText}</h3>};
-        if(wrongPasswordText.length > 0){passwordErrorJsx = <h3 style={errorStyle}>{wrongPasswordText}</h3>}
-        if(wrongPasswordConfirmText.length > 0){passwordConfirmErrorJsx = <h3 style={errorStyle}>{wrongPasswordConfirmText}</h3>}
+        if (wrongEmailText.length > 0 || error === true) { emailErrorJsx = <h3 style={errorStyle}>{wrongEmailText}</h3>; };
+        if (wrongPasswordText.length > 0) { passwordErrorJsx = <h3 style={errorStyle}>{wrongPasswordText}</h3>; }
+        if (wrongPasswordConfirmText.length > 0) { passwordConfirmErrorJsx = <h3 style={errorStyle}>{wrongPasswordConfirmText}</h3>; }
 
+        return (
+            <div className="login">
+                <h2>Załóż konto</h2>
+                <div className="decoration"></div>
+                <form method='POST' id="registerForm" onSubmit={this.handleSubmit}>
+                    <div>
+                        <label htmlFor="registerEmail">Email</label>
+                        <input style={wrongEmailText ? borderNone : null} type="email" id="registerEmail" onChange={this.handleEmailChange} value={emailText}></input>
+                        {emailErrorJsx}
+                    </div>
+                    <div>
+                        <label htmlFor="registerPassword">Hasło</label>
+                        <input style={wrongPasswordText ? borderNone : null} type="password" id="registerPassword" autoComplete="true" onChange={this.handlePasswordChange} value={passwordText}></input>
+                        {passwordErrorJsx}
+                    </div>
+                    <div>
+                        <label htmlFor="registerPasswordConfirm">Powtórz hasło</label>
+                        <input style={wrongPasswordConfirmText ? borderNone : null} type="password" id="registerPasswordConfirm" autoComplete="true" onChange={this.handlePasswordConfirmChange} value={passwordConfirmText}></input>
+                        {passwordConfirmErrorJsx}
+                    </div>
+                </form>
+                <div className="loginButtons"><a href="\login">Zaloguj się</a><input form="registerForm" type="submit" value="Załóż konto"></input></div>
+            </div>
+        )
+    }
+}
+
+const RegisterForm = compose(withRouter, withFirebase)(RegisterFormBase);
+
+class Register extends Component {
+    render() {
         return (
             <section className="loginSection">
                 <div className="headerLogin">
@@ -86,31 +134,15 @@ class Register extends Component {
                         <Nav />
                     </div>
                 </div>
-                <div className="login">
-                    <h2>Załóż konto</h2>
-                    <div className="decoration"></div>
-                    <form method='POST' id="registerForm" onSubmit={this.handleSubmit}>
-                        <div>
-                            <label htmlFor="registerEmail">Email</label>
-                            <input type="email" id="registerEmail" onChange={this.handleEmailChange} value={emailText}></input>
-                            {emailErrorJsx}
-                        </div>
-                        <div>
-                            <label htmlFor="registerPassword">Hasło</label>
-                            <input type="password" id="registerPassword" onChange={this.handlePasswordChange} value={passwordText}></input>
-                            {passwordErrorJsx}
-                        </div>
-                        <div>
-                            <label htmlFor="registerPasswordConfirm">Powtórz hasło</label>
-                            <input type="password" id="registerPasswordConfirm" onChange={this.handlePasswordConfirmChange} value={passwordConfirmText}></input>
-                            {passwordConfirmErrorJsx}
-                        </div>
-                    </form>
-                    <div className="loginButtons"><a href="\login">Zaloguj się</a><input form="registerForm" type="submit" value="Załóż konto"></input></div>
-                </div>
+                <FirebaseContext.Consumer>
+                    {firebase => <RegisterForm />}
+                </FirebaseContext.Consumer>
             </section>
+
         )
     }
 }
 
 export default Register;
+
+export { RegisterForm };

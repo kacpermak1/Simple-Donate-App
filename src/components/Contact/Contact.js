@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+const borderNone = {border:"none"};
 class Contact extends Component {
 
     state = {
@@ -81,18 +83,18 @@ class Contact extends Component {
                         <div className="inputsTop">
                             <div>
                                 <label htmlFor="name">Wpisz swoje imię</label>
-                                <input type="text" name="NAME" placeholder="Krzysztof" id="name" value={name} onChange={this.handleChangeName}></input>
+                                <input style={wrongNameText ? borderNone : null} type="text" name="NAME" placeholder="Krzysztof" id="name" value={name} onChange={this.handleChangeName}></input>
                                 {nameErrorJsx}
                             </div>
                             <div>
                                 <label htmlFor="email">Wpisz swój email</label>
-                                <input type="email" name="EMAIL" placeholder="abc@xyz.pl" id="email" value={email} onChange={this.handleChangeEmail}></input>
+                                <input style={wrongEmailText ? borderNone : null} type="email" name="EMAIL" placeholder="abc@xyz.pl" id="email" value={email} onChange={this.handleChangeEmail}></input>
                                 {emailErrorJsx}
                             </div>
                         </div>
                         <div className="inputBottom">
                             <label htmlFor="message">Wpisz swoją wiadomość</label>
-                            <textarea onChange={this.handleChangeMessage} value={message} id="message" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
+                            <textarea style={wrongMessageText ? borderNone : null} onChange={this.handleChangeMessage} value={message} id="message" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea>
                             {messageErrorJsx}
                         </div>
                         <input type="submit" className="submit" value="Wyślij" id="submit"></input>

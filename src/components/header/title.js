@@ -5,14 +5,33 @@ import { Link } from 'react-router-dom';
 class Title extends Component {
 
     render() {
+
+        const loggedOut =
+            <>
+                <Link to="/login"><p><span>Oddaj</span> rzeczy</p></Link>
+                <Link to="/login"><p><span>Zorganizuj</span> zbiórkę</p></Link>
+            </>;
+
+        const loggedIn =
+            <>
+                <Link to="/giveaway"><p><span>Oddaj</span> rzeczy</p></Link>
+                <Link to="/"><p><span>Zorganizuj</span> zbiórkę</p></Link>
+            </>
+
+        const session = sessionStorage.getItem('email');
+
+        let jsx;
+        if (session) {
+            jsx = loggedIn
+        } else { jsx = loggedOut };
+
         return (
             <div className="titleHeader">
                 <h1>Zacznij pomagać!</h1>
                 <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
-                <img src={decoration} className="decoration" alt="decoration"/>
+                <img src={decoration} className="decoration" alt="decoration" />
                 <div className="titleLinks">
-                <Link to="/login"><p><span>Oddaj</span> rzeczy</p></Link>
-                <Link to="/login"><p><span>Zorganizuj</span> zbiórkę</p></Link>
+                    {jsx}
                 </div>
             </div>
         )

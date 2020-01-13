@@ -98,10 +98,16 @@
             font-weight:300;
             margin: 3rem 2rem 0 0;
         }
-        select{
-            width:15rem;
-            height: 2rem;
+        .select{
+            width:16rem;
+            height: 2.4rem;
             margin-top:2.8rem;
+            display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 0.75px solid $color-text;
+        font-weight: 300;
             &:hover{
                 cursor:pointer;
             }

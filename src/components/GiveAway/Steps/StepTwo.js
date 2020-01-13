@@ -12,13 +12,8 @@ class StepTwo extends Component{
     <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
     <div className="selectNumberOfBags">
         <h2>Liczba 60l worków:</h2>
-        <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
+        <div className="select"><h4>-- Wybierz --</h4><div className="arrowDown"></div></div>
+        
     </div>
     <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.nextStep}>Dalej</button></div>
 </div>

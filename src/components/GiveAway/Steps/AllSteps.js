@@ -8,7 +8,8 @@ class AllSteps extends Component{
     state={
         stepNumber:1,
         stepOneInput: "",
-        numberOfBags: 1
+        numberOfBags: 1,
+        stepTwoSelectClicked: false
     }
 
     stepOneHandleRadioChange = (e) => {

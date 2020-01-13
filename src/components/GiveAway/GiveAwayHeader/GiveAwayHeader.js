@@ -6,7 +6,7 @@ import GiveAwayTitle from './GiveAwayTitle';
 class GiveAwayHeader extends Component {
     render() {
         return (
-            <div className="giveAwayHeader" id="home">
+            <div className="giveAwayHeader" id="top">
                 <div className="headerImage">
                 </div>
                 <div className="headerRight">

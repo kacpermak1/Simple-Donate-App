@@ -10,11 +10,20 @@
   .headerImage {
     width: 40%;
     height: 100%;
-    background-image: url("./../assets/Form-Hero-Image.jpg");
+    position:relative;
+    &:after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:125%;
+      height:100%;
+      background-image: url("./../assets/Form-Hero-Image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 20% 0;
-    margin: 0 auto;
+    background-position: 24% 0;
+    z-index:1;
+    }
   }
   .headerRight {
     display: flex;
@@ -24,6 +33,7 @@
     width: 60%;
     height: 100%;
     margin-top: 1rem;
+    z-index:10;
     .loginNav {
       width: 70%;
       max-width: 700px;
@@ -78,7 +88,7 @@
       align-items: center;
       justify-content: center;
       padding-right: 1rem;
-      margin-right: 5rem;
+      margin-right: 1rem;
       h1,
       h2 {
         font-size: 2rem;

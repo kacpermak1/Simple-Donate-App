@@ -30,7 +30,7 @@
     }
     form {
       width: 70%;
-      height: 50%;
+      height: 52%;
       .radio {
         margin: 2.4rem 0 2.4rem 0;
         input {
@@ -88,7 +88,7 @@
     }
     .selectNumberOfBags {
       width: 60%;
-      height: 50%;
+      height: 52%;
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -126,12 +126,9 @@
           background-size: contain;
         }
         .arrowUp{
-          width:16%;
-          height:100%;
-          background-image: url('../assets/Icon-Arrow-Up.svg');
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
+          animation-name: arrowUp;
+          animation-duration: 0.2s;
+          transform: rotate(180deg);
         }
       }
       .options{
@@ -147,6 +144,8 @@
         border: 1px solid black;
         font-size:1.2rem;
         font-weight:300;
+        animation-name: bagsList;
+          animation-duration: 0.5s;
         &:hover{
           cursor: pointer;
         }
@@ -162,4 +161,16 @@
       }
     }
   }
+}
+
+@keyframes arrowUp {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(180deg);}
+}
+
+@keyframes bagsList {
+  from {opacity: 0;
+  transform:translate(0, -10rem);}
+  to {opacity:1;
+    transform:translate(0)}
 }

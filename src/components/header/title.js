@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import decoration from './../../assets/Decoration.svg'
 import { Link } from 'react-router-dom';
+import {HashLink} from 'react-router-hash-link';
 
 class Title extends Component {
 
@@ -14,7 +15,7 @@ class Title extends Component {
 
         const loggedIn =
             <>
-                <Link to="/giveaway"><p><span>Oddaj</span> rzeczy</p></Link>
+                <HashLink to="/giveaway#top"><p><span>Oddaj</span> rzeczy</p></HashLink>
                 <Link to="/"><p><span>Zorganizuj</span> zbiórkę</p></Link>
             </>
 

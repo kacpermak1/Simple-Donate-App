@@ -11,31 +11,31 @@ class StepOne extends Component {
                 <form>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="ubrania, które nadają się do ponownego użycia"/>
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="1" checked={this.props.inputValue === "ubrania, które nadają się do ponownego użycia"? true : false}/>
                             ubrania, które nadają się do ponownego użycia
                             </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="ubrania, do wyrzucenia" />
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="2" checked={this.props.inputValue === "ubrania, do wyrzucenia" ? true : false} />
                             ubrania, do wyrzucenia
                             </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="zabawki" />
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="3" checked={this.props.inputValue === "zabawki" ? true : false} />
                             zabawki
                             </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="książki" />
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="4" checked={this.props.inputValue === "książki" ? true : false} />
                             książki
                             </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="Inne" />
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="5" checked={this.props.inputValue === "Inne" ? true : false} />
                             Inne
                             </label>
                     </div>

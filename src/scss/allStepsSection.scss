@@ -1,8 +1,111 @@
-.allStepsSection{
-    width:100%;
-    height:80vh;
-    background-image:url("../assets/Background-Form.png");
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
+.allStepsSection {
+  width: 100%;
+  height: 80vh;
+  background-image: url("../assets/Background-Form.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .singleStep {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    h3 {
+      position: absolute;
+      top: 3rem;
+      font-weight: 300;
+      font-size: 1.4rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0 1rem 0;
+    }
+    form {
+      width: 70%;
+      height: 50%;
+      .radio {
+        margin: 2.4rem 0 2.4rem 0;
+        input {
+          margin-right: 2rem; 
+        }
+        input[type="radio"]{
+            position: relative;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        input[type="radio"]:after {
+            content: "";
+            background: rgb(236, 237, 231);
+            border: 1px solid $color-text;
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top:-5px;
+            left:-6px;
+          }
+          input[type="radio"]:checked:after {
+            content: "";
+            background: $color-main;
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top:-5px;
+            left:-6px;
+          }
+        label {
+          font-weight: 300;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .buttonsBottom{
+        width:70%;
+        height:8%;
+        margin-top:2rem;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        button{
+            background:none;
+            border: 0.75px solid $color-text;
+            font-weight:300;
+            width:20%;
+            height:100%;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+    .selectNumberOfBags{
+        width:80%;
+        height:50%;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        h2{
+            font-size: 1.6rem;
+            font-weight:300;
+            margin: 3rem 2rem 0 0;
+        }
+        select{
+            width:15rem;
+            height: 2rem;
+            margin-top:2.8rem;
+            &:hover{
+                cursor:pointer;
+            }
+     }
+    }
+  }
 }

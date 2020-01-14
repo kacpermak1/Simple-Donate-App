@@ -8,7 +8,12 @@ const clickedStyle = {
 }
 
 class StepTwo extends Component{
+
     render(){
+
+        let buttonDisabled;
+        if(this.props.bags){buttonDisabled = false}else{buttonDisabled = true};
+
         return(
 <div className="singleStep">
 <h3>Krok 2/4</h3>
@@ -24,7 +29,7 @@ class StepTwo extends Component{
             <div onClick={this.props.select}>5</div>
         </div>
     </div>
-    <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.nextStep}>Dalej</button></div>
+    <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.nextStep} disabled={buttonDisabled}>Dalej</button></div>
 </div>
         )
     }

@@ -16,6 +16,9 @@ class StepThree extends Component {
 
     render() {
 
+        let buttonDisabled;
+        if(this.props.multiChoiceList.length && this.props.city){buttonDisabled = false}else if(this.props.inputVal && this.props.multiChoiceList.length){buttonDisabled = false}else{buttonDisabled = true};
+
         return (
 
             <div className="singleStep">
@@ -47,7 +50,7 @@ class StepThree extends Component {
                     <p>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
                     <input type="text" name="optionalOrganisation" onChange={this.props.inputChange} value={this.props.inputVal} style={{border: "0.75px solid #3C3C3C", backgroundColor:"transparent"}} />
                 </div>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.nextStep} disabled={buttonDisabled}>Dalej</button></div>
             </div>
         )
     }

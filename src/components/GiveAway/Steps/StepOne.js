@@ -4,6 +4,9 @@ class StepOne extends Component {
 
     render() {
 
+        let buttonDisabled;
+        if(this.props.inputValue){buttonDisabled = false}else{buttonDisabled = true};
+
         return (
             <div className="singleStep">
                 <h3>Krok 1/4</h3>
@@ -40,7 +43,7 @@ class StepOne extends Component {
                             </label>
                     </div>
                 </form>
-                <div className="buttonsBottom"><button onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button disabled={buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
             </div>
 
         )

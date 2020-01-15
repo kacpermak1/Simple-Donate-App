@@ -5,6 +5,7 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
 import Summary from './Summary';
+import EndMessage from './EndMessage'; 
 class AllSteps extends Component {
 
     state = {
@@ -80,19 +81,23 @@ class AllSteps extends Component {
     }
 
     handleSubmit = (e) => {
+
+        const {numberOfBags, stepOneInput, selectCity, whoToHelpList, optionalOrganisation, street, city, postCode, mobile, date, time, courierMessage } = this.state;
+
         const object = {
-            bags: this.state.numberOfBags,
-            whatItems: this.state.stepOneInput,
-            location: this.state.selectCity,
-            toRecieveHelp: this.state.whoToHelpList,
-            optionalOrganisation: this.state.optionalOrganisation,
+            bags: numberOfBags,
+            whatItems: stepOneInput,
+            location: selectCity,
+            toRecieveHelp: whoToHelpList,
+            optionalOrganisation: optionalOrganisation,
             addressAndTime: {
-                street: this.state.street,
-                city: this.state.city,
-                postcode: this.state.postCode,
-                date: this.state.date,
-                time: this.state.time,
-                message: this.state.courierMessage
+                street: street,
+                city: city,
+                postcode: postCode,
+                mobile: mobile,
+                date: date,
+                time: time,
+                message: courierMessage
             }
         }
 
@@ -107,6 +112,8 @@ class AllSteps extends Component {
             .catch(function (error) {
                 console.error("Error adding document: ", error);
             });
+
+            this.setState({stepNumber:6, stepTwoSelectClicked:false, numberOfBags:0, stepOneInput:"", selectCity:"", whoToHelpList:[], optionalOrganisation:"", street:"", city:"", postCode:"", mobile:"", date:"", time:"", courierMessage:""});
     }
 
     render() {
@@ -121,6 +128,7 @@ class AllSteps extends Component {
         if (stepNumber === 3) { renderStep = <StepThree select={this.stepThreeCitySelect} inputChange={this.handleOptionalOrganisationInputChange} inputVal={optionalOrganisation} multiChoiceList={whoToHelpList} multipleChoice={this.stepThreeHandleMultiChoice} city={selectCity} selectClick={this.stepTwoHandleClickSelect} isClicked={stepTwoSelectClicked} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy." };
         if (stepNumber === 4) { renderStep = <StepFour street={street} streetChange={this.handleStreetChange} city={city} postcode={postCode} postcodeChange={this.handlePostCodeChange} mobile={mobile} mobileChange={this.handleMobileChange} time={time} timeChange={this.handleTimeChange} message={courierMessage} messageChange={this.handleMessageChange} date={date} dateChange={this.handleDateChange} cityChange={this.handleCityChange} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Podaj adres oraz termin odbioru rzeczy." };
         if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} />; yellowBar = null } else { yellowBar = <YellowInfoBar text={topText} /> };
+        if (stepNumber === 6) { renderStep = <EndMessage/>; yellowBar = null}
 
         return (
             <>

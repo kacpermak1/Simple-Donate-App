@@ -4,7 +4,7 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
-
+import Summary from './Summary';
 class AllSteps extends Component {
 
     state = {
@@ -79,6 +79,35 @@ class AllSteps extends Component {
         this.setState({ courierMessage: e.target.value })
     }
 
+    handleSubmit = (e) => {
+        const object = {
+            bags: this.state.numberOfBags,
+            whatItems: this.state.stepOneInput,
+            location: this.state.selectCity,
+            toRecieveHelp: this.state.whoToHelpList,
+            optionalOrganisation: this.state.optionalOrganisation,
+            addressAndTime: {
+                street: this.state.street,
+                city: this.state.city,
+                postcode: this.state.postCode,
+                date: this.state.date,
+                time: this.state.time,
+                message: this.state.courierMessage
+            }
+        }
+
+        this.props.firebase.db.collection("users")
+        .add({
+            email: sessionStorage.getItem('email'),
+            request: object
+        })
+            .then(function (doc) {
+                console.log("Document written with ID: ", doc.id);
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+    }
 
     render() {
 
@@ -91,7 +120,8 @@ class AllSteps extends Component {
         if (stepNumber === 2) { renderStep = <StepTwo select={this.stepTwoHandleSelect} bags={numberOfBags} selectClick={this.stepTwoHandleClickSelect} isClicked={stepTwoSelectClicked} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ." }
         if (stepNumber === 3) { renderStep = <StepThree select={this.stepThreeCitySelect} inputChange={this.handleOptionalOrganisationInputChange} inputVal={optionalOrganisation} multiChoiceList={whoToHelpList} multipleChoice={this.stepThreeHandleMultiChoice} city={selectCity} selectClick={this.stepTwoHandleClickSelect} isClicked={stepTwoSelectClicked} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy." };
         if (stepNumber === 4) { renderStep = <StepFour street={street} streetChange={this.handleStreetChange} city={city} postcode={postCode} postcodeChange={this.handlePostCodeChange} mobile={mobile} mobileChange={this.handleMobileChange} time={time} timeChange={this.handleTimeChange} message={courierMessage} messageChange={this.handleMessageChange} date={date} dateChange={this.handleDateChange} cityChange={this.handleCityChange} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Podaj adres oraz termin odbioru rzeczy." };
-        if (stepNumber === 5) { yellowBar = null} else{yellowBar = <YellowInfoBar text={topText} />};
+        if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} />; yellowBar = null } else { yellowBar = <YellowInfoBar text={topText} /> };
+
         return (
             <>
                 {yellowBar}

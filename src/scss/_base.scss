@@ -7,6 +7,10 @@ body {
   margin: 0 auto;
 }
 
+.displayNone{
+  display:none;
+}
+
 @mixin titleLink {
   width: 16vw;
   height: 12vh;
@@ -32,4 +36,20 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   margin-bottom: 1.4rem;
+}
+
+@mixin stepTwoOptions {
+  display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background-color: rgb(236, 237, 231);
+        top:6rem;
+        right:14.8rem;
+        width:4rem;
+        height:10rem;
+        border: 1px solid black;
+        font-size:1.2rem;
+        font-weight:300;
 }

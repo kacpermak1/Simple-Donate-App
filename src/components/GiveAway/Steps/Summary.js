@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const style = {
-    marginRight: "1.4rem",
+    width:"20%"
 }
 const buttonsMargin = {
     marginTop: "0",
@@ -19,7 +19,7 @@ class Summary extends Component {
         if (bags === 1) { renderBags = 'worek'; } else if (bags > 1 && bags < 5) { renderBags = 'worki' } else { renderBags = 'worków' }
 
         return (
-            <div className="singleStep">
+            <div className="singleStep container">
                 <h2>Podsumowanie Twojej darowizny</h2>
                 <div className="summaryMain">
                     <div className="summaryTop">
@@ -64,7 +64,7 @@ class Summary extends Component {
                         </div>
                     </div>
                 </div>
-                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button onClick={this.props.submit}>Potwierdzam</button></div>
+                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.props.submit} style={style}>Potwierdzam</button></div>
             </div>
         )
     }

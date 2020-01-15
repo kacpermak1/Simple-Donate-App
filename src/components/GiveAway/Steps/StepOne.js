@@ -8,7 +8,7 @@ class StepOne extends Component {
         if(this.props.inputValue){buttonDisabled = false}else{buttonDisabled = true};
 
         return (
-            <div className="singleStep">
+            <div className="singleStep container">
                 <h3>Krok 1/4</h3>
                 <h2>Zaznacz co chcesz oddać:</h2>
                 <form>

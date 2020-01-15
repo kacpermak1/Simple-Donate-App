@@ -49,7 +49,6 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    background-color: rgb(236, 237, 231);
     top: 4rem;
     left: 0;
     width: 16rem;
@@ -57,7 +56,8 @@
     border: 1px solid black;
     font-size: 1.2rem;
     font-weight: 300;
-    animation-name: bagsList;
+    background-color: rgb(236, 237, 231);
+    animation-name: bagsListIn;
     animation-duration: 0.5s;
     &:hover {
       cursor: pointer;

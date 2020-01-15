@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-
-const style = {
-    marginRight: "1.4rem"
-}
-
 class StepFour extends Component {
 
     state = {
@@ -29,7 +24,7 @@ class StepFour extends Component {
         if (this.state.dateInputRender === 1) { jsx = <input type='text' onSelect={this.onClick} name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> } else { jsx = <input type='date' name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> }
         if (this.state.timeInputRender === 1) { timeJsx = <input type="text" onSelect={this.onClickTime} value={this.props.time} onChange={this.props.timeChange} /> } else { timeJsx = <input type="time" value={this.props.time} onChange={this.props.timeChange} /> };
         return (
-            <div className="singleStep">
+            <div className="singleStep container">
                 <h3>Krok 4/4</h3>
                 <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
                 <form id="stepFourForm">
@@ -66,7 +61,7 @@ class StepFour extends Component {
                         </div>
                     </div>
                 </form>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep} style={style}>Wstecz</button><button disabled = {buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button disabled = {buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
             </div>
         )
     }

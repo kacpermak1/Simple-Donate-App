@@ -4,7 +4,7 @@ class EndMessage extends Component{
 
     render(){
         return(
-            <div className="singleStep">
+            <div className="singleStep container">
                 <div className="endMessage">
                 <p>Dziękujemy za przesłanie formularza<br/> Na maila prześlemy wszelkie<br/> informacje o odbiorze.</p>
                 <div className="decoration"></div>
@@ -12,7 +12,6 @@ class EndMessage extends Component{
             </div>
         )
     }
-
 }
 
 export default EndMessage;

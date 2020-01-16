@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router basename='Simple-Donate-App'>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/login' component={Login} />

@@ -4,6 +4,7 @@ import Nav from './../Login/Nav';
 import { FirebaseContext, withFirebase } from '../Firebase';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import { Link } from 'react-router-dom';
 
 const errorStyle = {
     fontSize: "13px",
@@ -116,7 +117,7 @@ class RegisterFormBase extends Component {
                         {passwordConfirmErrorJsx}
                     </div>
                 </form>
-                <div className="loginButtons"><a href="\login">Zaloguj się</a><input form="registerForm" type="submit" value="Załóż konto"></input></div>
+                <div className="loginButtons"><Link to='/login'>Zaloguj się</Link><input form="registerForm" type="submit" value="Załóż konto"></input></div>
             </div>
         )
     }

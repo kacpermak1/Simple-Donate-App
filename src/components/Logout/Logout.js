@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginNav from './../header/loginNav';
 import Nav from './../Login/Nav';
+import { Link } from 'react-router-dom';
 
 class Logout extends Component {
 
@@ -16,7 +17,7 @@ class Logout extends Component {
                 <div className="logout">
                     <h2>Wylogowanie nastąpiło<br/>pomyślnie!</h2>
                     <div className="decoration"></div>
-                    <a href="\">Strona główna</a>
+                    <Link to='/'>Strona główna</Link>
                 </div>
             </section>
         )

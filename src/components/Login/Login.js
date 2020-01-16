@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginNav from './../header/loginNav';
 import Nav from './Nav';
+import { Link } from 'react-router-dom';
 import { FirebaseContext, withFirebase } from '../Firebase';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -99,7 +100,7 @@ class LoginFormBase extends Component {
                         {passwordErrorJsx}
                     </div>
                 </form>
-                <div className="loginButtons"><a href="\register">Załóż konto</a><input form="loginForm" type="submit" value="Zaloguj się"></input></div>
+                <div className="loginButtons"><Link to='/register'>Załóż konto</Link><input form="loginForm" type="submit" value="Zaloguj się"></input></div>
             </div>
         )
     }

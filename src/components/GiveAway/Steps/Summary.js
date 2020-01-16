@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const style = {
-    width:"20%"
+    width: "20%"
 }
 const buttonsMargin = {
     marginTop: "0",

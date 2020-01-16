@@ -19,7 +19,7 @@ class StepFour extends Component {
         let timeJsx;
         let buttonDisabled;
 
-        if(this.props.street.length < 2 || this.props.city.length < 2 || !this.props.postcode.match('^[0-9]{2}-[0-9]{3}$') || this.props.mobile.length !== 9 || !this.props.date || !this.props.time.match('^[0-9]{2}:[0-9]{2}$') ){buttonDisabled = true}else{buttonDisabled=false}
+        if (this.props.street.length < 2 || this.props.city.length < 2 || !this.props.postcode.match('^[0-9]{2}-[0-9]{3}$') || this.props.mobile.length !== 9 || !this.props.date || !this.props.time.match('^[0-9]{2}:[0-9]{2}$')) { buttonDisabled = true } else { buttonDisabled = false }
 
         if (this.state.dateInputRender === 1) { jsx = <input type='text' onSelect={this.onClick} name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> } else { jsx = <input type='date' name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> }
         if (this.state.timeInputRender === 1) { timeJsx = <input type="text" onSelect={this.onClickTime} value={this.props.time} onChange={this.props.timeChange} /> } else { timeJsx = <input type="time" value={this.props.time} onChange={this.props.timeChange} /> };
@@ -61,7 +61,7 @@ class StepFour extends Component {
                         </div>
                     </div>
                 </form>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button disabled = {buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button disabled={buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
             </div>
         )
     }

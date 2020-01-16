@@ -5,21 +5,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top:1.4rem;
-  margin-bottom:3rem;
+  margin-top: 1.4rem;
+  margin-bottom: 3rem;
   nav {
     @extend .whoWeHelp;
     height: 26%;
-    width:100%;
+    width: 100%;
     color: $color-text;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
     h2 {
       font-size: 2.2rem;
-      margin-bottom:2rem;
+      margin-bottom: 2rem;
     }
     .decoration {
       @include decoration;
-      margin-bottom:1.2rem;
+      margin-bottom: 1.2rem;
     }
     ul {
       width: 60%;
@@ -38,8 +38,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        &:hover{
-            cursor: pointer;
+        &:hover {
+          cursor: pointer;
         }
       }
     }
@@ -65,8 +65,8 @@
     font-family: $font-alt;
     font-weight: 300;
     margin-bottom: 0.6rem;
-    .donations{
-        margin-bottom:0.5rem;
+    .donations {
+      margin-bottom: 0.5rem;
     }
     div {
       height: 100%;
@@ -84,9 +84,9 @@
         font-style: italic;
       }
     }
-    &:nth-of-type(3){
-        border:none;
-        margin-bottom:1rem;
+    &:nth-of-type(3) {
+      border: none;
+      margin-bottom: 1rem;
     }
   }
   .pageNumberList {
@@ -104,8 +104,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      &:hover{
-          cursor: pointer;
+      &:hover {
+        cursor: pointer;
       }
     }
   }

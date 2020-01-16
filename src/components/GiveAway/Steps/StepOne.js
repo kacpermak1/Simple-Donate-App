@@ -5,7 +5,7 @@ class StepOne extends Component {
     render() {
 
         let buttonDisabled;
-        if(this.props.inputValue){buttonDisabled = false}else{buttonDisabled = true};
+        if (this.props.inputValue) { buttonDisabled = false } else { buttonDisabled = true };
 
         return (
             <div className="singleStep container">
@@ -14,7 +14,7 @@ class StepOne extends Component {
                 <form>
                     <div className="radio">
                         <label>
-                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="1" checked={this.props.inputValue === "ubrania, które nadają się do ponownego użycia"? true : false}/>
+                            <input onChange={this.props.radioChange} type="radio" name="stepOne" value="1" checked={this.props.inputValue === "ubrania, które nadają się do ponownego użycia" ? true : false} />
                             ubrania, które nadają się do ponownego użycia
                             </label>
                     </div>

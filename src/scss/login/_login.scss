@@ -79,6 +79,8 @@
     justify-content: center;
     color: $color-text;
     margin-top: 3rem;
+    animation-name: loginLogout;
+    animation-duration: 0.8s;
     h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
@@ -152,6 +154,8 @@
   align-items: center;
   justify-content: space-around;
   margin-top: 5rem;
+  animation-name: loginLogout;
+  animation-duration: 0.8s;
   h2 {
     font-size: 2.6rem;
     text-align: center;

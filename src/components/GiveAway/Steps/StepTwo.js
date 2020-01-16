@@ -30,6 +30,7 @@ class StepTwo extends Component {
                 <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                 <div className="selectNumberOfBags">
                     <h2>Liczba 60l worków:</h2>
+                    <div className="selectMain">
                     <div onClick={this.props.selectClick} className="select"><h4>{this.props.bags ? this.props.bags : "— wybierz —"}</h4><div className="arrowDown" style={animateStyle}></div></div>
                     <div className={optionsSlide}>
                         <div onClick={this.props.select}>1</div>
@@ -37,6 +38,7 @@ class StepTwo extends Component {
                         <div onClick={this.props.select}>3</div>
                         <div onClick={this.props.select}>4</div>
                         <div onClick={this.props.select}>5</div>
+                    </div>
                     </div>
                 </div>
                 <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.props.nextStep} disabled={buttonDisabled}>Dalej</button></div>

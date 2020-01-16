@@ -30,42 +30,30 @@
       font-size: 2rem;
       margin: 2rem 0 1rem 0;
     }
-    form {
+    div.stepOneRadioInput {
       width: 70%;
       height: 52%;
       .radio {
-        margin: 2.4rem 0 2.4rem 0;
-        input {
-          margin-right: 2rem;
-        }
-        input[type="radio"] {
-          position: relative;
-          &:hover {
-            cursor: pointer;
-          }
-        }
-        input[type="radio"]:after {
-          content: "";
+        margin: 1.5rem 0 1.5rem 0;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 300;
+        font-size: 1.2rem;
+        .radioCustomButton {
           background: rgb(236, 237, 231);
           border: 1px solid $color-text;
           width: 2rem;
           height: 2rem;
-          position: absolute;
           top: -5px;
           left: -6px;
-        }
-        input[type="radio"]:checked:after {
-          content: "";
-          background: $color-main;
-          width: 2rem;
-          height: 2rem;
-          position: absolute;
-          top: -5px;
-          left: -6px;
-        }
-        label {
-          font-weight: 300;
-          font-size: 1.2rem;
+          margin-right: 1.6rem;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -96,62 +84,66 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
-      position: relative;
       h2 {
         font-size: 1.6rem;
         font-weight: 300;
         margin: 3rem 2rem 0 0;
       }
-      .select {
-        width: 16rem;
-        height: 2.4rem;
-        margin-top: 2.8rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border: 0.75px solid $color-text;
-        font-weight: 300;
+      .selectMain {
         position: relative;
-        &:hover {
-          cursor: pointer;
-        }
-        h4 {
-          font-size: 1.2rem;
-          margin-left: 1rem;
-        }
-        .arrowDown {
-          width: 16%;
-          height: 100%;
-          background-image: url("../../assets/Icon-Arrow-Down.svg");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-      }
-      .options {
-        @include stepTwoOptions;
-        animation-name: bagsListIn;
-        animation-duration: 0.5s;
-        &:hover {
-          cursor: pointer;
-        }
-
-        div {
-          width: 100%;
-          height: 20%;
-          padding-top: 0.2rem;
-          text-align: center;
+        width: 16rem;
+        height: 14rem;
+        .select {
+          width: 16rem;
+          height: 2.4rem;
+          margin-top: 2.8rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          border: 0.75px solid $color-text;
+          font-weight: 300;
+          position: relative;
           &:hover {
-            background-color: $color-main;
+            cursor: pointer;
+          }
+          h4 {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+          }
+          .arrowDown {
+            width: 16%;
+            height: 100%;
+            background-image: url("../../assets/Icon-Arrow-Down.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
           }
         }
-      }
-      .optionsOut {
-        @include stepTwoOptions;
-        animation-name: bagsListOut;
-        animation-duration: 0.4s;
-        opacity: 0;
+        .options {
+          @include stepTwoOptions;
+          animation-name: bagsListIn;
+          animation-duration: 0.5s;
+          &:hover {
+            cursor: pointer;
+          }
+
+          div {
+            width: 100%;
+            height: 20%;
+            padding-top: 0.2rem;
+            text-align: center;
+            &:hover {
+              background-color: $color-main;
+            }
+          }
+        }
+        .optionsOut {
+          @include stepTwoOptions;
+          animation-name: bagsListOut;
+          animation-duration: 0.4s;
+          opacity: 0;
+        }
       }
     }
   }

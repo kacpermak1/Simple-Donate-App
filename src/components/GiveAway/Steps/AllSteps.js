@@ -128,7 +128,7 @@ class AllSteps extends Component {
         if (stepNumber === 4) { renderStep = <StepFour street={street} streetChange={this.handleStreetChange} city={city} postcode={postCode} postcodeChange={this.handlePostCodeChange} mobile={mobile} mobileChange={this.handleMobileChange} time={time} timeChange={this.handleTimeChange} message={courierMessage} messageChange={this.handleMessageChange} date={date} dateChange={this.handleDateChange} cityChange={this.handleCityChange} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Podaj adres oraz termin odbioru rzeczy." };
         if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} />};
         if (stepNumber === 6) { renderStep = <EndMessage />};
-        if (stepNumber >= 1 && stepNumber <= 4){yellowBar = <YellowInfoBar text={topText} />;}else{yellowBar = null}
+        if (stepNumber >= 1 && stepNumber <= 4){yellowBar = <YellowInfoBar text={topText} />}else{yellowBar = null};
 
         return (
             <>

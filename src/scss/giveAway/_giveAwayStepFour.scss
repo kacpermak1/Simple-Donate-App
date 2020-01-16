@@ -47,5 +47,19 @@ form#stepFourForm {
       align-items: center;
       justify-content: space-between;
     }
+    &:nth-of-type(2) {
+      position: relative;
+      ul {
+        position: absolute;
+        bottom: -7rem;
+        li {
+          color: rgb(241, 63, 32);
+          font-size: 1.2rem;
+          font-weight: 300;
+          animation-name: eachStepIn;
+          animation-duration: 0.5s;
+        }
+      }
+    }
   }
 }

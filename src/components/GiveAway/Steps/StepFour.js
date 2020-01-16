@@ -3,7 +3,8 @@ class StepFour extends Component {
 
     state = {
         dateInputRender: 1,
-        timeInputRender: 1
+        timeInputRender: 1,
+        errors: []
     }
 
     onClick = () => {
@@ -12,17 +13,38 @@ class StepFour extends Component {
     onClickTime = () => {
         this.setState({ timeInputRender: 2 })
     }
+    handleSubmit = () => {
+        let err = [];
+
+        if (this.props.street.length < 2) {
+            err.push('Podaj nazwę ulicy')
+        } else if (this.props.city.length < 2) {
+            err.push('Podaj nazwę miasta')
+        } else if (!this.props.postcode.match('^[0-9]{2}-[0-9]{3}$')) {
+            err.push('Podaj kod pocztowy w formacie XX-XXX')
+        } else if (this.props.mobile.length !== 9) {
+            err.push('Numer telefonu musi posiadać 9 cyfr')
+        } else if (!this.props.date) {
+            err.push('Podaj datę w formacie DD.MM.RRRR')
+        } else if (!this.props.time.match('^[0-9]{2}:[0-9]{2}$')) {
+            err.push('Podaj poprawną godzinę odbioru np. 10:30')
+        };
+
+        if (err.length > 0) { this.setState({ errors: err }) } else {
+            this.props.nextStep()
+        }
+    }
 
     render() {
 
         let jsx;
         let timeJsx;
-        let buttonDisabled;
-
-        if (this.props.street.length < 2 || this.props.city.length < 2 || !this.props.postcode.match('^[0-9]{2}-[0-9]{3}$') || this.props.mobile.length !== 9 || !this.props.date || !this.props.time.match('^[0-9]{2}:[0-9]{2}$')) { buttonDisabled = true } else { buttonDisabled = false }
+        let errList;
 
         if (this.state.dateInputRender === 1) { jsx = <input type='text' onSelect={this.onClick} name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> } else { jsx = <input type='date' name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> }
         if (this.state.timeInputRender === 1) { timeJsx = <input type="text" onSelect={this.onClickTime} value={this.props.time} onChange={this.props.timeChange} /> } else { timeJsx = <input type="time" value={this.props.time} onChange={this.props.timeChange} /> };
+        if(this.state.errors.length>0){errList = <ul className="errorsList">{this.state.errors.map((e,i) =><li key={i}>{e}</li>)}</ul>}else{errList = null};
+        
         return (
             <div className="singleStep container">
                 <h3>Krok 4/4</h3>
@@ -59,9 +81,10 @@ class StepFour extends Component {
                             <label>Uwagi<br /> dla kuriera</label>
                             <textarea value={this.props.message} onChange={this.props.messageChange} />
                         </div>
+                        {errList}
                     </div>
                 </form>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button disabled={buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.handleSubmit}>Dalej</button></div>
             </div>
         )
     }

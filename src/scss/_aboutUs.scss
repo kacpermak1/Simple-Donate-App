@@ -6,6 +6,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  @include mobile{
+    display:none;
+  }
   div {
     @extend .aboutUs;
     height: 100%;
@@ -27,13 +30,13 @@
       }
       p {
         width: 70%;
-        height: 28%;
-        max-height: 28%;
+        height: 32%;
+        max-height: 32%;
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         line-height: 1.7;
         letter-spacing: -0.6px;
-        overflow: auto;
+        overflow: hidden;
       }
       .signatureSpace {
         width: 100%;

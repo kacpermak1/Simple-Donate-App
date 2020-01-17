@@ -15,7 +15,7 @@ class WhoWeHelp extends Component {
         clickedElement: 1,
         dataToLoad: data.organisations[0],
         dataPerPage: 3,
-        currentPage: 1
+        currentPage: 1,
     }
 
     handleClickOne = (e) => {
@@ -33,15 +33,16 @@ class WhoWeHelp extends Component {
 
     render() {
 
-        const { dataToLoad, dataPerPage, currentPage, clickedElement } = this.state;
-        const indexOfLast = currentPage * dataPerPage;
-        const indexOfFirst = indexOfLast - dataPerPage;
+        const { dataToLoad, currentPage, clickedElement } = this.state;
+        const { itemsPerPage } = this.props;
+        const indexOfLast = currentPage * itemsPerPage;
+        const indexOfFirst = indexOfLast - itemsPerPage;
         const currentData = dataToLoad.items.slice(indexOfFirst, indexOfLast);
         const elements = dataToLoad.items;
         const elementsOnPage = currentData.map((e, i) => { return <div className="eachOrganisation" key={i}><div><h2>{e.name}</h2><h2>{clickedElement === 1 ? "Cel i misja:" : ""} {e.mission}</h2></div><h2 className="donations">{e.donations}</h2></div> })
 
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(elements.length / dataPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(elements.length / itemsPerPage); i++) {
             const elem = <li key={i} style={currentPage === i ? clickedStyle : borderNone} onClick={e => this.pageChangeHandle(e, i)}>{i}</li>
             pageNumbers.push(elem);
         }

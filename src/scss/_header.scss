@@ -9,8 +9,8 @@
   height: 80vh;
   margin-top: 1rem;
   @include mobile {
-    height: 66vh;
-    margin-top: 0;
+    height: 32vh;
+    margin-top: 26%;
   }
   .headerImage {
     width: 40%;
@@ -35,6 +35,18 @@
       width: 100%;
       height: 70%;
       position: relative;
+      &::after {
+        content: "";
+        background-image: url("./../assets/Home-Hero-Image.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        z-index: -1;
+      }
     }
     .mobileBar {
       width: 100%;
@@ -44,18 +56,18 @@
       top: 0;
       z-index: 1200;
       .hamburgerIcon {
-        font-size:3.8rem;
+        font-size: 3.8rem;
         position: absolute;
         top: 26%;
         right: 2rem;
-        color:white;
+        color: white;
         &:hover {
           cursor: pointer;
         }
       }
       .tshirt {
-        width:26%;
-        height:100%;
+        width: 26%;
+        height: 100%;
         font-size: 6rem;
         position: absolute;
         color: $color-text;
@@ -145,7 +157,7 @@
       width: 100%;
       height: 30vh;
       margin-top: 30%;
-      margin-bottom:40%;
+      margin-bottom: 40%;
     }
     ul {
       width: 100%;
@@ -160,7 +172,7 @@
       @include mobile {
         flex-direction: column;
         color: white;
-        font-size:1.5rem;
+        font-size: 1.5rem;
       }
       li:nth-of-type(1) {
         padding: 8px 16px;
@@ -186,6 +198,12 @@
     margin-right: 5rem;
     @include mobile {
       margin-right: 0;
+      align-items: flex-start;
+    }
+    .decoration {
+      @include mobile {
+        display: none;
+      }
     }
     h1,
     h2 {
@@ -197,12 +215,19 @@
       text-align: center;
       @include mobile {
         margin-right: 0;
+        text-align: start;
+      }
+    }
+    h1 {
+      @include mobile {
+        font-size: 1.2rem;
       }
     }
     h2 {
       margin-bottom: 2rem;
       @include mobile {
         margin-right: 0;
+        font-size: 1.6rem;
       }
     }
     .titleLinks {
@@ -211,6 +236,11 @@
       align-items: center;
       justify-content: center;
       margin-top: 2.6rem;
+      @include mobile {
+        width: 100%;
+        height: 30%;
+        justify-content: flex-end;
+      }
       a {
         @include titleLink;
         p {

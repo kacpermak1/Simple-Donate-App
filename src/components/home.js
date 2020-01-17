@@ -7,6 +7,23 @@ import WhoWeHelp from './WhoWeHelp/WhoWheHelp';
 import Contact from './Contact/Contact';
 
 class Home extends Component {
+
+    state = {
+        windowWidth: window.innerWidth
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({ windowWidth: window.innerWidth })
+    }
+
     render() {
         return (
             <>
@@ -14,7 +31,7 @@ class Home extends Component {
                 <ThreeColumns />
                 <SimpleStepsSection />
                 <AboutUsSection />
-                <WhoWeHelp />
+                <WhoWeHelp itemsPerPage={this.state.windowWidth <= 640? 2 : 3} />
                 <Contact />
             </>
         )

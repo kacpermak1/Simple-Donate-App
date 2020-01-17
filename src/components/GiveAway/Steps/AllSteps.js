@@ -120,7 +120,6 @@ class AllSteps extends Component {
         const { stepNumber, numberOfBags, stepOneInput, selectCity, whoToHelpList, optionalOrganisation, street, city, postCode, mobile, date, time, courierMessage, animateSlide } = this.state;
         let renderStep;
         let topText;
-        let yellowBar;
 
         if (stepNumber === 1) { renderStep = <StepOne radioChange={this.stepOneHandleRadioChange} inputValue={stepOneInput} nextStep={this.handleNextStepButton} />; topText = "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać." };
         if (stepNumber === 2) { renderStep = <StepTwo select={this.stepTwoHandleSelect} animate={animateSlide} bags={numberOfBags} selectClick={this.stepTwoHandleClickSelect} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ." }
@@ -128,11 +127,10 @@ class AllSteps extends Component {
         if (stepNumber === 4) { renderStep = <StepFour street={street} streetChange={this.handleStreetChange} city={city} postcode={postCode} postcodeChange={this.handlePostCodeChange} mobile={mobile} mobileChange={this.handleMobileChange} time={time} timeChange={this.handleTimeChange} message={courierMessage} messageChange={this.handleMessageChange} date={date} dateChange={this.handleDateChange} cityChange={this.handleCityChange} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Podaj adres oraz termin odbioru rzeczy." };
         if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} />};
         if (stepNumber === 6) { renderStep = <EndMessage />};
-        if (stepNumber >= 1 && stepNumber <= 4){yellowBar = <YellowInfoBar text={topText} />}else{yellowBar = null};
 
         return (
             <>
-                {yellowBar}
+                {(stepNumber >= 1 && stepNumber <= 4)&&<YellowInfoBar text={topText} />}
                 <section className="allStepsSection">
                     {renderStep}
                 </section>

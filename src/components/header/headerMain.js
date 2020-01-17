@@ -57,7 +57,7 @@ class HeaderMain extends Component {
                 </div>
                 <div className="headerRight">
                     {navMain}
-                    <Title />
+                    <Title windowWidth={this.state.windowWidth} />
                 </div>
             </div>
         )

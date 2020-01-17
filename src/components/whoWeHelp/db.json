@@ -55,7 +55,7 @@
       {
         "id": 2,
         "name": "Organizacjom pozarządowym",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "description": "Pomagamy również wszelkim organizacjom pozarządowym i charytatywnym, które nie są Fundacjami. Są to nasi Partnerzy, który zrobią dobry pożytek z rzeczy, które do nich trafią.",
         "items": [
           {
             "name": "Organizacja “Lorem Ipsum 1”",
@@ -92,7 +92,7 @@
       {
         "id": 3,
         "name": "Lokalnym zbiórkom",
-        "description": "A commodi cupiditate excepturi in nam odit ratione saepe sit, velit voluptatem. Aperiam commodi dolor excepturi fugiat nesciunt quo, repudiandae saepe temporibus?",
+        "description": "Wspieramy lokalne zbiórki organizowane przez indywidualne osoby, którym zależy na dobru społeczności, w której żyją. Sam też możesz zorganizować taką zbiórkę i pomóc tym, którzy są najbliżej.",
         "items": [
           {
             "name": "Zbiórka “Lorem Ipsum 1”",

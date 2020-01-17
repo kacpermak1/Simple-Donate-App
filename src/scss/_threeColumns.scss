@@ -7,6 +7,9 @@
   justify-content: space-around;
   background-color: $color-main;
   margin: 0 auto;
+  @include mobile{
+    display: none;
+  }
   div {
     @extend .threeColumns;
     height: 100%;

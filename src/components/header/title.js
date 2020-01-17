@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
-import decoration from './../../assets/Decoration.svg'
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import decoration from './../../assets/Decoration.svg';
 
 class Title extends Component {
 
-    state = {
-        windowWidth: window.innerWidth
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', this.handleWindowSizeChange)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange)
-    }
-
     render() {
+
+        const { windowWidth } = this.props;
 
         const loggedOut =
             <>
@@ -31,17 +21,19 @@ class Title extends Component {
                 <Link to="/"><p><span>Zorganizuj</span> zbiórkę</p></Link>
             </>
 
+        const logedOutMobile = <Link to="/login"><p>ZAŁÓŻ KONTO</p></Link>
+
         const session = sessionStorage.getItem('email');
 
         let jsx;
         if (session) {
             jsx = loggedIn
-        } else { jsx = loggedOut };
+        } else if (!session && windowWidth > 640) { jsx = loggedOut } else if (!session && windowWidth <= 640) { jsx = logedOutMobile };
 
         return (
             <div className="titleHeader">
-                <h1>Zacznij pomagać!</h1>
-                <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
+                {windowWidth > 640 ? <h1>Zacznij pomagać!</h1> : <h1>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>}
+                {windowWidth > 640 ? <h2>Oddaj niechciane rzeczy w zaufane ręce</h2> : <h2>ODDAJ JE POTRZEBUJĄCYM <br />- szybko i w zaufane ręce</h2>}
                 <img src={decoration} className="decoration" alt="decoration" />
                 <div className="titleLinks">
                     {jsx}

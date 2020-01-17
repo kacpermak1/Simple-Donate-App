@@ -57,3 +57,47 @@
     opacity: 1;
   }
 }
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translate(40rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes mobileMenuOut {
+  from {
+    opacity: 1;
+    transform: translate(0);
+    visibility: visible;
+    z-index: 120;
+  }
+  to {
+    z-index: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(40rem, 0);
+  }
+}
+
+@keyframes burgerRotate {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes burgerRotateBack {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

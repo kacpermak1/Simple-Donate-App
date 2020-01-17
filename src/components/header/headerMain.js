@@ -3,7 +3,7 @@ import LoginNav from './loginNav';
 import Nav from './nav';
 import Title from './title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTshirt, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const displayStyle = {
     display: "flex",
@@ -49,7 +49,7 @@ class HeaderMain extends Component {
             burgerAnimate = { animationName: "burgerRotate", animationDuration: "0.5s" }; animate = { animationName: "burgerRotateBack", animationDuration: "0.5s" };
         } else { burgerAnimate = null; animate = null }
 
-        if (this.state.windowWidth <= 640) { navMain = <><div className="mobileBar"><FontAwesomeIcon icon={faTshirt} /><div onClick={this.handleClick} style={this.state.clickCounter % 2 ? burgerAnimate : animate} className="hamburgerIcon"></div></div><div style={this.state.clickCounter % 2 ? displayStyle : navOut} className="mobileNav"><FontAwesomeIcon onClick={this.handleClick} icon={faChevronRight} /><LoginNav /><Nav /></div></> } else (navMain = <><LoginNav /><Nav /></>)
+        if (this.state.windowWidth <= 640) { navMain = <><div className="mobileBar"><div className="tshirt"></div><FontAwesomeIcon icon={faBars} onClick={this.handleClick} style={this.state.clickCounter % 2 ? burgerAnimate : animate} className="hamburgerIcon"/></div><div style={this.state.clickCounter % 2 ? displayStyle : navOut} className="mobileNav"><FontAwesomeIcon onClick={this.handleClick} icon={faChevronRight} /><LoginNav /><Nav /></div></> } else (navMain = <><LoginNav /><Nav /></>)
 
         return (
             <div className="headerMain" id="home">

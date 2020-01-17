@@ -5,6 +5,18 @@ import { HashLink } from 'react-router-hash-link';
 
 class Title extends Component {
 
+    state = {
+        windowWidth: window.innerWidth
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange)
+    }
+
     render() {
 
         const loggedOut =

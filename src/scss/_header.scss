@@ -9,8 +9,10 @@
   height: 80vh;
   margin-top: 1rem;
   @include mobile {
-    height: 32vh;
-    margin-top: 26%;
+    height: 56vh;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    margin-bottom: 6rem;
   }
   .headerImage {
     width: 40%;
@@ -33,7 +35,7 @@
     height: 100%;
     @include mobile {
       width: 100%;
-      height: 70%;
+      height: 90%;
       position: relative;
       &::after {
         content: "";
@@ -41,66 +43,15 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        bottom: -8rem;
+        left: -6rem;
         position: absolute;
         width: 100%;
         height: 100%;
-        opacity: 0.2;
+        opacity: 0.4;
         z-index: -1;
       }
     }
-    .mobileBar {
-      width: 100%;
-      height: 12%;
-      background-color: $color-main;
-      position: fixed;
-      top: 0;
-      z-index: 1200;
-      .hamburgerIcon {
-        font-size: 3.8rem;
-        position: absolute;
-        top: 26%;
-        right: 2rem;
-        color: white;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      .tshirt {
-        width: 26%;
-        height: 100%;
-        font-size: 6rem;
-        position: absolute;
-        color: $color-text;
-        top: 0;
-        left: 1rem;
-        background-image: url("./../assets/tshirts.png");
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-    .mobileNav {
-      position: fixed;
-      top: 12%;
-      right: 0;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      height: 88%;
-      width: 70%;
-      background-color: $color-text;
-      z-index: 120;
-      animation-name: mobileMenuIn;
-      animation-duration: 0.5s;
-      svg {
-        position: absolute;
-        font-size: 3.2rem;
-        top: 50%;
-        left: 0.7rem;
-        color: $color-textLight;
-      }
-    }
-
     .loginNav {
       width: 70%;
       max-width: 700px;
@@ -115,6 +66,7 @@
         height: 16vh;
         justify-content: flex-start;
         flex-direction: column;
+        position: relative;
       }
       a {
         color: $color-textLight;
@@ -147,6 +99,12 @@
     }
     h3 {
       font-size: 0.9rem;
+      @include mobile{
+        font-size:1.2rem;
+        color:white;
+        position: absolute;
+        top:-3rem;
+      }
     }
   }
   .navList {
@@ -198,7 +156,12 @@
     margin-right: 5rem;
     @include mobile {
       margin-right: 0;
+      padding-right:0;
       align-items: flex-start;
+      justify-content: flex-start;
+      margin-top:5rem;
+      width: 100%;
+      height: 100%;
     }
     .decoration {
       @include mobile {
@@ -220,14 +183,16 @@
     }
     h1 {
       @include mobile {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        margin-top: 1rem;
       }
     }
     h2 {
       margin-bottom: 2rem;
       @include mobile {
         margin-right: 0;
-        font-size: 1.6rem;
+        margin-top: 1rem;
+        font-size: 2rem;
       }
     }
     .titleLinks {
@@ -235,11 +200,15 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-top: 2.6rem;
+      margin-top: 2.2rem;
       @include mobile {
         width: 100%;
-        height: 30%;
+        height: 24%;
+        margin-top: 4rem;
         justify-content: flex-end;
+        position: absolute;
+        bottom:0;
+        right:1rem;
       }
       a {
         @include titleLink;

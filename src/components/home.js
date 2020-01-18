@@ -5,6 +5,8 @@ import SimpleStepsSection from './simpleSteps/SimpleStepsSection';
 import AboutUsSection from './aboutUs/aboutUsSection';
 import WhoWeHelp from './WhoWeHelp/WhoWheHelp';
 import Contact from './Contact/Contact';
+import MobileContact from './Mobile/MobileContact';
+import BeforeContact from './Mobile/BeforeContact';
 
 class Home extends Component {
 
@@ -32,7 +34,8 @@ class Home extends Component {
                 <SimpleStepsSection />
                 <AboutUsSection />
                 <WhoWeHelp itemsPerPage={this.state.windowWidth <= 640? 2 : 3} />
-                <Contact />
+                {(this.state.windowWidth<=640)&&<BeforeContact/>}
+                {this.state.windowWidth > 640 ? <Contact /> : <MobileContact/>}
             </>
         )
     }

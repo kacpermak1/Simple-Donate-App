@@ -21,7 +21,7 @@ class Title extends Component {
                 <Link to="/"><p><span>Zorganizuj</span> zbiórkę</p></Link>
             </>
 
-        const logedOutMobile = <Link to="/login"><p>ZAŁÓŻ KONTO</p></Link>
+        const logedOutMobile = <Link to="/register"><p>ZAŁÓŻ KONTO</p></Link>
 
         const session = sessionStorage.getItem('email');
 

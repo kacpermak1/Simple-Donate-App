@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FirebaseContext, withFirebase } from '../Firebase';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import MobileManu from '../header/MobileMenu';
 
 const style = {
     paddingTop: "2.5rem",
@@ -109,13 +110,30 @@ class LoginFormBase extends Component {
 const LoginForm = compose(withRouter, withFirebase)(LoginFormBase);
 
 class Login extends Component {
+
+    state = {
+        windowWidth: window.innerWidth
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({ windowWidth: window.innerWidth })
+    }
+
+
     render() {
         return (
             <section className="loginSection">
                 <div className="headerLogin">
                     <div className="headerLoginRight">
-                        <LoginNav />
-                        <Nav />
+                    {this.state.windowWidth <= 640 ? <MobileManu/> : <><LoginNav /><Nav /></>}
                     </div>
                 </div>
                 <FirebaseContext.Consumer>

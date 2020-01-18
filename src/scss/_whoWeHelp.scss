@@ -9,7 +9,7 @@
   margin-bottom: 3rem;
   @include mobile {
     margin: 0;
-    height: 82vh;
+    height: 86vh;
     justify-content: center;
   }
   nav {
@@ -19,7 +19,7 @@
     color: $color-text;
     margin-bottom: 2rem;
     @include mobile {
-      margin: 0;
+      margin-bottom: 1.4rem;
     }
     h2 {
       font-size: 2.2rem;
@@ -59,14 +59,14 @@
           cursor: pointer;
         }
         @include mobile {
-          width: 9rem;
-          height: 9rem;
+          width: 9.5rem;
+          height: 9.5rem;
           margin: 4px;
           font-size: 1rem;
           text-transform: uppercase;
           line-height: 1.2;
-          color: white;
-          font-weight: 400;
+          color: $color-text;
+          font-weight: 600;
           background-color: $color-main;
           border-radius: 50%;
           box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
@@ -83,11 +83,11 @@
     margin-bottom: 2rem;
     color: $color-text;
     @include mobile {
-      width: 90%;
-      height: 14%;
+      width: 92%;
+      height: 16%;
       margin-top: 1.4rem;
-      font-size:1.2rem;
-      margin-bottom: 1.5rem;
+      font-size:1.3rem;
+      margin-bottom: 2rem;
     }
   }
   .eachOrganisation {
@@ -104,6 +104,7 @@
     margin-bottom: 0.6rem;
     @include mobile {
       height: 16%;
+      width:85%;
       margin-top:0.3rem;
     }
     .donations {

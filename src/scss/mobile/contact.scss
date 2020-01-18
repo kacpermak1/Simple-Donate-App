@@ -1,0 +1,43 @@
+.mobileContact{
+    width:100%;
+    height:28vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: $color-main;
+    padding-bottom:1rem;
+    font-size: 1.3rem;
+    p{
+      margin-left:1.2rem;
+      margin-right:1rem;
+      margin-bottom:4px;
+    }
+    .mobileContactIcon{
+      width:5rem;
+      height:5rem;
+      background-image: url("../../assets/tshirts.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-left:1.2rem;
+    }
+    .mobileContactTopText{
+      width:100%;
+      height:10%;
+      display:flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-weight: 600;
+      margin-bottom:2rem;
+      svg{
+        margin-right:1rem;
+        font-size:1.8rem;
+      }
+    }
+    .mobileContactCottomText{
+      width:100%;
+      height:30%;
+    }
+  }

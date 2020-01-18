@@ -5,6 +5,7 @@ import { FirebaseContext, withFirebase } from '../Firebase';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { Link } from 'react-router-dom';
+import MobileManu from '../header/MobileMenu';
 
 const errorStyle = {
     fontSize: "13px",
@@ -126,13 +127,29 @@ class RegisterFormBase extends Component {
 const RegisterForm = compose(withRouter, withFirebase)(RegisterFormBase);
 
 class Register extends Component {
+
+    state = {
+        windowWidth: window.innerWidth
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange)
+    }
+
+    handleWindowSizeChange = () => {
+        this.setState({ windowWidth: window.innerWidth })
+    }
+
     render() {
         return (
             <section className="loginSection">
                 <div className="headerLogin">
                     <div className="headerLoginRight">
-                        <LoginNav />
-                        <Nav />
+                    {this.state.windowWidth <= 640 ? <MobileManu/> : <><LoginNav /><Nav /></>}
                     </div>
                 </div>
                 <FirebaseContext.Consumer>

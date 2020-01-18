@@ -5,6 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include mobile{
+    position: relative;
+  }
   .headerLogin {
     display: flex;
     flex-direction: row;
@@ -22,6 +25,9 @@
       align-items: center;
       width: 60%;
       height: 100%;
+      @include mobile{
+        width:100%;
+      }
       .loginNav {
         width: 70%;
         max-width: 700px;
@@ -31,14 +37,36 @@
         align-items: center;
         justify-content: flex-end;
         margin-bottom: 1rem;
+        @include mobile {
+          width: 100%;
+          height: 16vh;
+          justify-content: flex-start;
+          flex-direction: column;
+          position: relative;
+        }
         a {
           color: $color-textLight;
           text-decoration: none;
           font-size: 0.9rem;
           margin-left: 1.5rem;
+          @include mobile {
+            color: white;
+            margin-left: 0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            width: 12rem;
+            height: 8rem;
+            border: 0.75px solid $color-main;
+            padding: 4px 6px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
           &:nth-of-type(2) {
             border: 0.75px solid $color-main;
             padding: 8px 12px;
+            
           }
         }
       }
@@ -46,6 +74,12 @@
         width: 70%;
         max-width: 700px;
         height: 6vh;
+        @include mobile {
+          width: 100%;
+          height: 30vh;
+          margin-top: 30%;
+          margin-bottom: 40%;
+        }
         ul {
           width: 100%;
           height: 100%;
@@ -55,9 +89,17 @@
           justify-content: space-between;
           font-size: 1.1rem;
           color: $color-text;
+          @include mobile {
+            flex-direction: column;
+            color: white;
+            font-size: 1.5rem;
+          }
           a {
             color: $color-text;
             text-decoration: none;
+            @include mobile{
+              color: white;
+            }
           }
           li:hover {
             cursor: pointer;
@@ -98,6 +140,9 @@
       align-items: center;
       justify-content: center;
       padding: 1rem 1rem;
+      @include mobile{
+        width:70%;
+      }
       div {
         width: 80%;
         height: 50%;
@@ -129,6 +174,9 @@
       font-size: 1.2rem;
       font-weight: 300;
       margin-top: 1rem;
+      @include mobile{
+        width:70%;
+      }
       a {
         text-decoration: none;
         color: #000;
@@ -140,6 +188,9 @@
         padding: 0.8rem;
         &:hover {
           cursor: pointer;
+        }
+        @include mobile{
+          padding:1.8rem;
         }
       }
     }
@@ -172,5 +223,8 @@
     border: 0.75px solid $color-text;
     font-weight: 300;
     padding: 0.8rem;
+    @include mobile{
+      padding: 2.5rem;
+    }
   }
 }

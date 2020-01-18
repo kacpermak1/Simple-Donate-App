@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import LoginNav from './loginNav';
-import Nav from './nav';
-import Title from './title';
+import Nav from '../Login/Nav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const displayStyle = {
     display: "flex",
 }
-class HeaderMain extends Component {
+class MobileMenu extends Component {
 
     state = {
         windowWidth: window.innerWidth,
@@ -51,17 +50,8 @@ class HeaderMain extends Component {
 
         if (this.state.windowWidth <= 640) { navMain = <><div className="mobileBar"><div className="tshirt"></div><FontAwesomeIcon icon={faBars} onClick={this.handleClick} style={this.state.clickCounter % 2 ? burgerAnimate : animate} className="hamburgerIcon"/></div><div style={this.state.clickCounter % 2 ? displayStyle : navOut} className="mobileNav"><FontAwesomeIcon onClick={this.handleClick} icon={faChevronRight} /><LoginNav windowWidth={this.state.windowWidth} /><Nav windowWidth={this.state.windowWidth} /></div></> } else (navMain = <><LoginNav windowWidth={this.state.windowWidth} /><Nav windowWidth={this.state.windowWidth} /></>)
 
-        return (
-            <div className="headerMain" id="home">
-                <div className="headerImage">
-                </div>
-                <div className="headerRight">
-                    {navMain}
-                    <Title windowWidth={this.state.windowWidth} />
-                </div>
-            </div>
-        )
+        return navMain
     }
 }
 
-export default HeaderMain;
+export default MobileMenu;

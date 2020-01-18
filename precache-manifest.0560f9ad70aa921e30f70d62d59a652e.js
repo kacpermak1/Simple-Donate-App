@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5c0f8d731cf5fdc75f586252823b93d4",
+    "revision": "a27a81c104919b94092fa07dc3b53a10",
     "url": "/Simple-Donate-App/index.html"
   },
   {
-    "revision": "824bb3b4a36366c01468",
-    "url": "/Simple-Donate-App/static/css/main.d1355cee.chunk.css"
+    "revision": "e24cf443dce49bd33d53",
+    "url": "/Simple-Donate-App/static/css/main.f3ac344c.chunk.css"
   },
   {
     "revision": "11e1e2ad2bf94713c4d0",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simple-Donate-App/static/js/2.eaad04f5.chunk.js.LICENSE"
   },
   {
-    "revision": "824bb3b4a36366c01468",
+    "revision": "e24cf443dce49bd33d53",
     "url": "/Simple-Donate-App/static/js/main.d79cabde.chunk.js"
   },
   {

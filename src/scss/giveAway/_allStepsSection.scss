@@ -88,6 +88,8 @@
       align-items: center;
       @include mobile{
         margin-bottom: 2rem;
+        height:14%;
+        width:88%;
       }
       button {
         background: none;
@@ -100,8 +102,8 @@
           cursor: pointer;
         }
         @include mobile{
-          width:8rem;
-          height:3.6rem;
+          width:10rem;
+          height:4.6rem;
         }
       }
     }

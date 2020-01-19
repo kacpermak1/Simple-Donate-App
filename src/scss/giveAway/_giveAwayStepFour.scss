@@ -5,6 +5,11 @@ form#stepFourForm {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  @include mobile{
+    width: 100%;
+    height:60%;
+
+  }
   p {
     margin-bottom: 1rem;
     font-size: 1.3rem;
@@ -14,6 +19,9 @@ form#stepFourForm {
     background-color: transparent;
     width: 13.5rem;
     height: 2rem;
+    @include mobile{
+      min-height:2.2rem;
+    }
   }
   #textareaStepFour {
     height: 30%;
@@ -25,6 +33,9 @@ form#stepFourForm {
       width: 13.5rem;
       height: 6rem;
       resize: none;
+      @include mobile{
+        min-height:4rem;
+      }
     }
   }
   label {
@@ -39,6 +50,10 @@ form#stepFourForm {
     align-items: flex-start;
     justify-content: flex-start;
     margin-right: 2rem;
+    @include mobile{
+      width:50%;
+      height:90%;
+    }
     div {
       width: 80%;
       height: 20%;
@@ -46,12 +61,21 @@ form#stepFourForm {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      @include mobile{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
     }
     &:nth-of-type(2) {
       position: relative;
       ul {
         position: absolute;
         bottom: -7rem;
+        @include mobile {
+          bottom:-2rem;
+          left:-16rem;
+        }
         li {
           color: rgb(241, 63, 32);
           font-size: 1.2rem;

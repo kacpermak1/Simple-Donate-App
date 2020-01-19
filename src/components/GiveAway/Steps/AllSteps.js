@@ -6,6 +6,7 @@ import StepThree from './StepThree';
 import StepFour from './StepFour';
 import Summary from './Summary';
 import EndMessage from './EndMessage';
+import GiveAwayTop from '../../Mobile/GiveAwayTop';
 class AllSteps extends Component {
 
     state = {
@@ -52,10 +53,10 @@ class AllSteps extends Component {
         this.setState({ optionalOrganisation: e.target.value })
     }
     handleNextStepButton = () => {
-        this.setState({ stepNumber: this.state.stepNumber + 1, animateSlide: 0})
+        this.setState({ stepNumber: this.state.stepNumber + 1, animateSlide: 0 })
     }
     handlePreviousStepButton = () => {
-        this.setState({ stepNumber: this.state.stepNumber - 1, animateSlide: 0})
+        this.setState({ stepNumber: this.state.stepNumber - 1, animateSlide: 0 })
     }
     handleStreetChange = (e) => {
         this.setState({ street: e.target.value })
@@ -125,12 +126,13 @@ class AllSteps extends Component {
         if (stepNumber === 2) { renderStep = <StepTwo select={this.stepTwoHandleSelect} animate={animateSlide} bags={numberOfBags} selectClick={this.stepTwoHandleClickSelect} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ." }
         if (stepNumber === 3) { renderStep = <StepThree select={this.stepThreeCitySelect} animate={animateSlide} inputChange={this.handleOptionalOrganisationInputChange} inputVal={optionalOrganisation} multiChoiceList={whoToHelpList} multipleChoice={this.stepThreeHandleMultiChoice} city={selectCity} selectClick={this.stepTwoHandleClickSelect} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy." };
         if (stepNumber === 4) { renderStep = <StepFour street={street} streetChange={this.handleStreetChange} city={city} postcode={postCode} postcodeChange={this.handlePostCodeChange} mobile={mobile} mobileChange={this.handleMobileChange} time={time} timeChange={this.handleTimeChange} message={courierMessage} messageChange={this.handleMessageChange} date={date} dateChange={this.handleDateChange} cityChange={this.handleCityChange} prevStep={this.handlePreviousStepButton} nextStep={this.handleNextStepButton} />; topText = "Podaj adres oraz termin odbioru rzeczy." };
-        if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} />};
-        if (stepNumber === 6) { renderStep = <EndMessage />};
+        if (stepNumber === 5) { renderStep = <Summary submit={this.handleSubmit} prevStep={this.handlePreviousStepButton} stepOne={stepOneInput} bags={numberOfBags} location={selectCity} whoToHelpList={whoToHelpList} optional={optionalOrganisation} time={time} message={courierMessage} date={date} mobile={mobile} postcode={postCode} city={city} street={street} /> };
+        if (stepNumber === 6) { renderStep = <EndMessage /> };
 
         return (
             <>
-                {(stepNumber >= 1 && stepNumber <= 4)&&<YellowInfoBar text={topText} />}
+                {(this.props.windowWidth <= 640) && <GiveAwayTop stepNumber={this.state.stepNumber}/>}
+                {(stepNumber >= 1 && stepNumber <= 4) && <YellowInfoBar text={topText} windowWidth={this.props.windowWidth} />}
                 <section className="allStepsSection">
                     {renderStep}
                 </section>

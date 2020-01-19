@@ -13,11 +13,11 @@ class Nav extends Component {
         return (
             <div className='navList'>
                 <ul>
-                    <li style={{ border: "0.75px solid transparent" }}><Link to="/#home" smooth={true} offset={0} duration={500} style={style}>Start</Link></li>
-                    <li><Link to="/#steps" smooth={true} offset={50} duration={500} style={style}>O co chodzi?</Link></li>
+                    <li style={{ border: "0.75px solid transparent" }}><Link smooth to="/#home" offset={0} duration={500} style={style}>Start</Link></li>
+                    <li><Link smooth to="/#steps" offset={50} duration={500} style={style}>O co chodzi?</Link></li>
                     {aboutUs}
-                    <li><Link to="/#whoWeHelp" smooth={true} offset={0} duration={500} style={style}>Fundacja i organizacje</Link></li>
-                    <li><Link to="/#contact" smooth={true} offset={50} duration={500} style={style}>Kontakt</Link></li>
+                    <li><Link smooth to="/#whoWeHelp" offset={0} duration={500} style={style}>Fundacja i organizacje</Link></li>
+                    <li><Link smooth to="/#contact" offset={50} duration={500} style={style}>Kontakt</Link></li>
                 </ul>
             </div>
         )

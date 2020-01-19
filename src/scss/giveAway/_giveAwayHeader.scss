@@ -7,10 +7,17 @@
   max-width: 1500px;
   margin: 0 auto;
   height: 80vh;
+  @include mobile{
+    height:3vh;
+    margin-top:3rem;
+  }
   .headerImage {
     width: 40%;
     height: 100%;
     position: relative;
+    @include mobile{
+      display: none;
+    }
     &:after {
       content: "";
       position: absolute;
@@ -43,24 +50,59 @@
       align-items: center;
       justify-content: flex-end;
       margin-bottom: 1rem;
+      @include mobile {
+        width: 100%;
+        height: 16vh;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;}
       a {
         color: $color-textLight;
         text-decoration: none;
         font-size: 14px;
         margin-left: 1.5rem;
+        @include mobile {
+          color: white;
+          margin-left: 0;
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+          width: 12rem;
+          height: 8rem;
+          border: 0.75px solid $color-main;
+          padding: 4px 6px;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         &:nth-of-type(2) {
           border: 0.75px solid $color-main;
           padding: 8px 12px;
+          @include mobile {
+            padding: 4px 6px;
+          }
         }
       }
       h3 {
-        font-size: 14px;
+        font-size: 0.9rem;
+        @include mobile{
+          font-size:1.2rem;
+          color:white;
+          position: absolute;
+          top:-3rem;
+        }
       }
     }
     .navList {
       width: 70%;
       max-width: 700px;
       height: 6vh;
+      @include mobile {
+        width: 100%;
+        height: 30vh;
+        margin-top: 30%;
+        margin-bottom: 40%;
+      }
       ul {
         width: 100%;
         height: 100%;
@@ -71,9 +113,18 @@
         font-size: 18px;
         color: $color-text;
         text-align: center;
+        @include mobile {
+          flex-direction: column;
+          color: white;
+          font-size: 1.5rem;
+        }
         li:nth-of-type(1) {
           padding: 8px 16px;
           border: 0.75px solid $color-text;
+          @include mobile {
+            padding: 0;
+            border: none;
+          }
         }
         li:hover {
           cursor: pointer;

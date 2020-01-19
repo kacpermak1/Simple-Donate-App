@@ -76,10 +76,10 @@
     
   }
   to {
-    z-index: 0;
+    z-index: -1;
     visibility: hidden;
     transform: translate(40rem, 0);
-    opacity: 0;
+    opacity: -1;
   }
 }
 

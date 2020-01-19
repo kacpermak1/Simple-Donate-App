@@ -29,7 +29,7 @@ class Home extends Component {
     render() {
         return (
             <>
-                <HeaderMain />
+                <HeaderMain windowWidth={this.state.windowWidth} />
                 <ThreeColumns />
                 <SimpleStepsSection />
                 <AboutUsSection />

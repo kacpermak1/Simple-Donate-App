@@ -127,13 +127,12 @@ class Login extends Component {
         this.setState({ windowWidth: window.innerWidth })
     }
 
-
     render() {
         return (
             <section className="loginSection">
                 <div className="headerLogin">
                     <div className="headerLoginRight">
-                    {this.state.windowWidth <= 640 ? <MobileManu/> : <><LoginNav /><Nav /></>}
+                    {this.state.windowWidth <= 640 ? <MobileManu windowWidth={this.state.windowWidth} navigationType={<Nav windowWidth={this.state.windowWidth} />} /> : <><LoginNav /><Nav /></>}
                     </div>
                 </div>
                 <FirebaseContext.Consumer>

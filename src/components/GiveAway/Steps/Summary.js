@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-const style = {
-    width: "20%"
-}
 const buttonsMargin = {
     marginTop: "0",
     padding: "0"
@@ -64,7 +61,7 @@ class Summary extends Component {
                         </div>
                     </div>
                 </div>
-                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.props.submit} style={style}>Potwierdzam</button></div>
+                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button id="submitButton" onClick={this.props.submit}>Potwierdzam</button></div>
             </div>
         )
     }

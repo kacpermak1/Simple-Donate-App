@@ -2,6 +2,18 @@
   height: 20vh;
   width: 100%;
   background-color: $color-main;
+  @include mobile{
+    height:12vh;
+    position: relative;
+    margin-top:1.2rem;
+    svg{
+      position: absolute;
+      font-size: 2.4rem;
+      top:0.5rem;
+      left:1rem;
+      color:$color-text
+    }
+  }
   div {
     height: 100%;
     width: 85%;
@@ -9,15 +21,30 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    @include mobile{
+      width:90%;
+      margin-left: 3.4rem;
+    }
     h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
+      @include mobile{
+        font-size: 1.5rem;
+        margin-bottom:0.3rem;
+        color:$color-text
+      }
     }
     p {
       color: $color-text;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       line-height: 1.2;
       width: 88%;
+      @include mobile{
+        font-size: 1rem;
+        line-height: 1.1;
+        width: 94%;
+        color:$color-text
+      }
     }
   }
 }

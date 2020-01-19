@@ -2,24 +2,9 @@ import React, { Component } from 'react';
 import LoginNav from '../../header/loginNav'
 import Nav from '../../Login/Nav'
 import GiveAwayTitle from './GiveAwayTitle';
+import MobileMenu from '../../header/MobileMenu';
 
 class GiveAwayHeader extends Component {
-
-    state = {
-        windowWidth: window.innerWidth
-    }
-
-    componentDidMount() {
-        window.addEventListener('resize', this.handleWindowSizeChange)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange)
-    }
-
-    handleWindowSizeChange = () => {
-        this.setState({ windowWidth: window.innerWidth })
-    }
 
     render() {
         return (
@@ -27,9 +12,11 @@ class GiveAwayHeader extends Component {
                 <div className="headerImage">
                 </div>
                 <div className="headerRight">
-                    <LoginNav windowWidth={this.state.windowWidth} />
-                    <Nav windowWidth={this.state.windowWidth} />
+                    {this.props.windowWidth <= 640 ? <MobileMenu windowWidth={this.props.windowWidth} navigationType={<Nav windowWidth={this.props.windowWidth} />}/> : <>
+                    <LoginNav />
+                    <Nav />
                     <GiveAwayTitle />
+                    </>}
                 </div>
             </div>
         )

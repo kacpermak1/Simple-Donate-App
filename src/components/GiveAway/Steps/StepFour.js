@@ -61,11 +61,11 @@ class StepFour extends Component {
                             <input type="text" name="city" value={this.props.city} onChange={this.props.cityChange} />
                         </div>
                         <div>
-                            <label>Kod<br /> pocztowy:</label>
+                            <label>Kod pocztowy:</label>
                             <input type="text" name="postcode" value={this.props.postcode} onChange={this.props.postcodeChange} />
                         </div>
                         <div>
-                            <label>Numer<br /> telefonu:</label>
+                            <label>Numer telefonu:</label>
                             <input type="number" name="phoneNumber" value={this.props.mobile} onChange={this.props.mobileChange} />
                         </div>
                     </div>
@@ -78,7 +78,7 @@ class StepFour extends Component {
                             <label>Godzina:</label>{timeJsx}
                         </div>
                         <div id="textareaStepFour">
-                            <label>Uwagi<br /> dla kuriera</label>
+                            <label>Uwagi dla kuriera</label>
                             <textarea value={this.props.message} onChange={this.props.messageChange} />
                         </div>
                         {errList}

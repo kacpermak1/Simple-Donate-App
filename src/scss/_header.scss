@@ -9,7 +9,7 @@
   height: 80vh;
   margin-top: 1rem;
   @include mobile {
-    height: 56vh;
+    height: 66vh;
     margin-top: 3rem;
     padding-top: 2rem;
     margin-bottom: 6rem;
@@ -157,7 +157,7 @@
     @include mobile {
       margin-right: 0;
       padding-right:0;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       margin-top:5rem;
       width: 100%;
@@ -178,21 +178,22 @@
       text-align: center;
       @include mobile {
         margin-right: 0;
-        text-align: start;
       }
     }
     h1 {
       @include mobile {
         font-size: 1.5rem;
         margin-top: 1rem;
+        line-height: 1.2;
       }
     }
     h2 {
       margin-bottom: 2rem;
       @include mobile {
         margin-right: 0;
-        margin-top: 1rem;
-        font-size: 2rem;
+        margin-top: 2rem;
+        font-size: 2.2rem;
+        line-height: 1.4;
       }
     }
     .titleLinks {

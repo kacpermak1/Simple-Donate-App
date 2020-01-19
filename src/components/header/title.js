@@ -3,16 +3,33 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import decoration from './../../assets/Decoration.svg';
 import Statisctics from '../Mobile/Statistics';
-import { compose } from 'recompose';
-import { FirebaseContext, withFirebase } from '../Firebase';
-import { withRouter } from 'react-router-dom';
 
 class Title extends Component {
+
+    state = {
+        data:[]
+    }
+
+    componentDidMount(){
+        this.getData();
+    }
+
+    getData = () => {
+        let arr = [];
+        let email = sessionStorage.getItem("email");
+        this.props.firebase.db.collection("users").where("email", "==", email)
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    arr.push(doc.data().request.bags);
+                })
+            })
+        this.setState({ data: arr })
+    }
 
     render() {
 
         const { windowWidth } = this.props;
-        const Stats = compose(withRouter, withFirebase)(Statisctics)
 
         const loggedOut =
             <>
@@ -39,9 +56,7 @@ class Title extends Component {
             return (<div className="titleHeader" style={{postion:"relative",alignItems:"center"}}>
                 <h1 style={{fontSize:"2.4rem"}}>Zacznij pomagać!</h1>
                 <h2 style={{fontSize:"1.6rem"}}>Oddaj niechciane rzeczy w zaufane ręce</h2>
-                <FirebaseContext.Consumer>
-                    {firebase=><Stats/>}
-                </FirebaseContext.Consumer>
+                <Statisctics data={this.state.data}/>
                 <div className="titleLinks" style={{bottom:"-7rem",left:"0", width:"100%",justifyContent:"space-around"}}>
                     {jsx}
                 </div>

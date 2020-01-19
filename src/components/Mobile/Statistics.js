@@ -3,54 +3,39 @@ import React, { Component } from 'react';
 class Statistics extends Component {
 
     state = {
-        data: [],
-        numberOfBags: 0,
+        numberOfBags: 0
     }
 
-    componentDidMount(){
-        this.getData()
-    }
-       
-    getData = () => {
-        let arr = [];
-        let email = sessionStorage.getItem("email")
-        this.props.firebase.db.collection("users").where("email", "==", email)
-            .get()
-            .then(function (querySnapshot) {
-                querySnapshot.forEach(function (doc) {
-                    arr.push(doc.data().request.bags);
-                })
-            })
-        this.setState({ data: arr })
+    componentDidMount() {
+        const intervalId = setInterval(() => {
+            this.addBags();
+        }, 500);
+
+        setTimeout(() => {
+            clearInterval(intervalId);
+        }, 2000);
     }
 
     addBags = () => {
         let number;
-        if (this.state.data.length > 0) {
-            number = this.state.data.reduce((a, b) => a + b);
+        if (this.props.data.length > 0) {
+            number = this.props.data.reduce((a, b) => a + b);
             this.setState({ numberOfBags: number })
         }
-    }
-
-    updateState = () => {
-        this.props.firebase.db.collection("users")
-    .onSnapshot(function(doc) {
-        console.log(doc);
-    });
     }
 
     render() {
         return (
             <div className="statistics">
-                <div className="statisticsColumn" onClick={this.addBags}>
+                <div className="statisticsColumn">
                     <div>{this.state.numberOfBags}</div>
                     <p>oddanych worków</p>
                 </div>
-                <div className="statisticsColumn" onClick={this.addBags}>
-                    <div>{this.state.data.length}</div>
+                <div className="statisticsColumn">
+                    <div>{this.props.data.length}</div>
                     <p>wspartych organizacji</p>
                 </div>
-                <div className="statisticsColumn" onClick={this.addBags}>
+                <div className="statisticsColumn">
                     <div>0</div>
                     <p>zbiórek</p>
                 </div>

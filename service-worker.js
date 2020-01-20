@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Simple-Donate-App/precache-manifest.cb1ff1b1a4d7fa2017c0b28143d8b5d3.js"
+  "/Simple-Donate-App/precache-manifest.340010f51c56da3a97f7961d1f7d1af7.js"
 );
 
 self.addEventListener('message', (event) => {

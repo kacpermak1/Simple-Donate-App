@@ -3,29 +3,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import decoration from './../../assets/Decoration.svg';
 import Statisctics from '../Mobile/Statistics';
-
 class Title extends Component {
-
-    state = {
-        data:[]
-    }
-
-    componentDidMount(){
-        this.getData();
-    }
-
-    getData = () => {
-        let arr = [];
-        let email = sessionStorage.getItem("email");
-        this.props.firebase.db.collection("users").where("email", "==", email)
-            .get()
-            .then(function (querySnapshot) {
-                querySnapshot.forEach(function (doc) {
-                    arr.push(doc.data().request.bags);
-                })
-            })
-        this.setState({ data: arr })
-    }
 
     render() {
 
@@ -53,11 +31,11 @@ class Title extends Component {
         } else if (!session && windowWidth > 640) { jsx = loggedOut } else if (!session && windowWidth <= 640) { jsx = logedOutMobile };
 
         if (windowWidth <= 640 && session) {
-            return (<div className="titleHeader" style={{postion:"relative",alignItems:"center"}}>
-                <h1 style={{fontSize:"2.4rem"}}>Zacznij pomagać!</h1>
-                <h2 style={{fontSize:"1.6rem"}}>Oddaj niechciane rzeczy w zaufane ręce</h2>
-                <Statisctics data={this.state.data}/>
-                <div className="titleLinks" style={{bottom:"-7rem",left:"0", width:"100%",justifyContent:"space-around"}}>
+            return (<div className="titleHeader" style={{ postion: "relative", alignItems: "center" }}>
+                <h1 style={{ fontSize: "2.4rem" }}>Zacznij pomagać!</h1>
+                <h2 style={{ fontSize: "1.6rem" }}>Oddaj niechciane rzeczy w zaufane ręce</h2>
+                <Statisctics data={this.props.data} />
+                <div className="titleLinks" style={{ bottom: "-7rem", left: "0", width: "100%", justifyContent: "space-around" }}>
                     {jsx}
                 </div>
             </div>)

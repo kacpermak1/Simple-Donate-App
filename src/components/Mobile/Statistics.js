@@ -1,38 +1,23 @@
 import React, { Component } from 'react';
-
 class Statistics extends Component {
 
     state = {
-        numberOfBags: 0
+        data: []
     }
-
-    componentDidMount() {
-        const intervalId = setInterval(() => {
-            this.addBags();
-        }, 500);
-
-        setTimeout(() => {
-            clearInterval(intervalId);
-        }, 2000);
-    }
-
-    addBags = () => {
-        let number;
-        if (this.props.data.length > 0) {
-            number = this.props.data.reduce((a, b) => a + b);
-            this.setState({ numberOfBags: number })
-        }
+  
+    componentDidMount(){
+        setTimeout(()=>{this.setState({ data: this.props.data })},1300)
     }
 
     render() {
         return (
             <div className="statistics">
                 <div className="statisticsColumn">
-                    <div>{this.state.numberOfBags}</div>
+                    <div>{this.state.data.length ? this.state.data.reduce((a, b) => a + b) : 0}</div>
                     <p>oddanych worków</p>
                 </div>
                 <div className="statisticsColumn">
-                    <div>{this.props.data.length}</div>
+                    <div>{this.state.data.length}</div>
                     <p>wspartych organizacji</p>
                 </div>
                 <div className="statisticsColumn">

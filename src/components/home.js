@@ -17,7 +17,7 @@ class Home extends Component {
 
     componentDidMount() {
         window.addEventListener('resize', this.handleWindowSizeChange); 
-       setTimeout(()=>{this.getData()},500) ;
+       setTimeout(()=>{this.getDataForStatistics()},700) ;
     }
 
     componentWillUnmount() {
@@ -28,7 +28,7 @@ class Home extends Component {
         this.setState({ windowWidth: window.innerWidth })
     }
 
-    getData = () => {
+    getDataForStatistics = () => {
         let arr = [];
         let email = sessionStorage.getItem("email");
         this.props.firebase.db.collection("users").where("email", "==", email)

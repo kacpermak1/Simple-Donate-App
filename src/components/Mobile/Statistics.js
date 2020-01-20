@@ -13,7 +13,11 @@ class LoadingBar extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => { this.setState({ loading: false }) }, 2600)
+        this.timeOut = setTimeout(() => { this.setState({ loading: false }) }, 2600)
+    }
+
+    componentWillUnmount(){
+        clearTimeout(this.timeOut)
     }
 
     render() {

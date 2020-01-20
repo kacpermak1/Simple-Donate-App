@@ -10,6 +10,14 @@ const style = {
 
 class HeaderMain extends Component {
 
+    state = {
+        clickCounter: 0
+    }
+
+    handleClick = () => {
+        this.setState({ clickCounter: this.state.clickCounter + 1 })
+    }
+
     render() {
 
         const session = sessionStorage.getItem('email');
@@ -19,7 +27,7 @@ class HeaderMain extends Component {
                 <div className="headerImage">
                 </div>
                 <div className="headerRight">
-                    {this.props.windowWidth <= 640 ? <MobileMenu windowWidth={this.props.windowWidth} navigationType={<Nav windowWidth={this.props.windowWidth}/>} /> : <><LoginNav windowWidth={this.props.windowWidth} /><Nav windowWidth={this.props.windowWidth} /></>}
+                    {this.props.windowWidth <= 640 ? <MobileMenu click={this.state.clickCounter} windowWidth={this.props.windowWidth} navigationType={<Nav click={this.handleClick} windowWidth={this.props.windowWidth}/>} /> : <><LoginNav windowWidth={this.props.windowWidth} /><Nav windowWidth={this.props.windowWidth} /></>}
                     <Title windowWidth={this.props.windowWidth} data={this.props.data}/>
                 </div>
             </div>

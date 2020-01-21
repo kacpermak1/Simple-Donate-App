@@ -21,7 +21,7 @@ class Summary extends Component {
                 <div className="summaryMain">
                     <div className="summaryTop">
                         <h4>You are giving:</h4>
-                        <div><div className="shirtIcon"></div><p>{bags} {renderBags},of {stepOne}, to: {whoToHelpList.map((e, i) => { return <span key={i}>{e}, </span> })} </p></div>
+                        <div><div className="shirtIcon"></div><p>{bags} {renderBags} of {stepOne} to: {whoToHelpList.map((e, i) => { return <span key={i}>{e}, </span> })} </p></div>
                         <div><div className="circleIcon"></div><p>{optional ? 'for: ' + optional : 'for location: ' + location}</p></div>
                     </div>
                     <div className="summaryBottom">

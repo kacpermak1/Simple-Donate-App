@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 class StepFour extends Component {
 
     state = {
-        dateInputRender: 1,
-        timeInputRender: 1,
+        
         errors: []
     }
 
-    onClick = () => {
-        this.setState({ dateInputRender: 2 })
-    }
-    onClickTime = () => {
-        this.setState({ timeInputRender: 2 })
-    }
     handleSubmit = () => {
         let err = [];
 
@@ -35,12 +28,8 @@ class StepFour extends Component {
 
     render() {
 
-        let jsx;
-        let timeJsx;
         let errList;
 
-        if (this.state.dateInputRender === 1) { jsx = <input type='text' onSelect={this.onClick} name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> } else { jsx = <input type='date' name="date" id="date" value={this.props.date} onChange={this.props.dateChange} /> }
-        if (this.state.timeInputRender === 1) { timeJsx = <input type="text" onSelect={this.onClickTime} value={this.props.time} onChange={this.props.timeChange} /> } else { timeJsx = <input type="time" value={this.props.time} onChange={this.props.timeChange} /> };
         if(this.state.errors.length>0){errList = <ul className="errorsList">{this.state.errors.map((e,i) =><li key={i}>{e}</li>)}</ul>}else{errList = null};
         
         return (
@@ -70,10 +59,12 @@ class StepFour extends Component {
                     <div>
                         <p>Date and time:</p>
                         <div>
-                            <label>Date:</label>{jsx}
+                            <label>Date:</label>
+                            <input type='date' name="date" id="date" value={this.props.date} onChange={this.props.dateChange} />
                         </div>
                         <div>
-                            <label>Time:</label>{timeJsx}
+                            <label>Time:</label>
+                            <input type="time" value={this.props.time} onChange={this.props.timeChange} /> 
                         </div>
                         <div id="textareaStepFour">
                             <label>Note for courier</label>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withFirebase } from '../Firebase';
 
 const borderNone = {border:"none"};
 class Contact extends Component {
@@ -45,17 +46,23 @@ class Contact extends Component {
         }else{this.setState({wrongMessageText:''})};
 
         if (err.length === 0) {
-            (async () => {
-                const rawResponse = await fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ name: this.state.name, email: this.state.email, message: this.state.message })
-                });
-                const content = await rawResponse.json();
-                console.log(content);
-            })();
+
+            const object = {
+                name: name,
+                email: email,
+                message: message
+            }
+            this.props.firebase.db.collection('messages')
+            .add({
+                request: object
+            })
+            .then(function (doc) {
+                console.log("Document ID: ", doc.id);
+            })
+            .catch(function (error) {
+                console.error("Error: ", error);
+            });
+
             this.setState({ endText: "Message has been sent! We will contact you soon.", name: '', email: '', message: '' });
         }
     }
@@ -106,4 +113,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact;
+export default withFirebase(Contact);

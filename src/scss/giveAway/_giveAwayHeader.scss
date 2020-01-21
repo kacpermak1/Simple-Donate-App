@@ -60,7 +60,7 @@
       a {
         color: $color-textLight;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 0.9rem;
         margin-left: 1.5rem;
         @include mobile {
           display: block;
@@ -113,13 +113,18 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        font-size: 18px;
+        font-size: 1.1rem;
         color: $color-text;
         text-align: center;
         @include mobile {
           flex-direction: column;
           color: white;
           font-size: 1.5rem;
+        }
+        li {
+          @media screen and (min-width: 641px) and (max-width: 1150px) {
+            width: 20%;
+          }
         }
         li:nth-of-type(1) {
           padding: 8px 16px;
@@ -154,7 +159,7 @@
       }
       h2 {
         margin-bottom: 1rem;
-        
+
         &:nth-of-type(2) {
           margin-bottom: 2rem;
         }

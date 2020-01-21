@@ -96,6 +96,11 @@
             color: white;
             font-size: 1.5rem;
           }
+          li{
+            @media screen and ( min-width: 641px ) and (max-width: 1150px){
+              width:20%;
+            }
+          }
           a {
             color: $color-text;
             text-decoration: none;
@@ -148,6 +153,10 @@
       @include mobile{
         width:80%;
         height:74%;
+      }
+      @include landscape{
+        height:100%;
+        padding:0;
       }
       div {
         width: 80%;

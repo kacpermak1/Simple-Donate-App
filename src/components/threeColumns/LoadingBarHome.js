@@ -21,7 +21,7 @@ class LoadingBarHome extends Component {
     }
 
     render() {
-        return <>{this.state.loading ? <CircleLoader css={override} color={"#3C3C3C"} size={80} loading={this.state.loading} /> : <h2>0</h2>}</>
+        return <>{this.state.loading ? <CircleLoader css={override} color={"#3C3C3C"} size={70} loading={this.state.loading} /> : <h2>0</h2>}</>
     }
 }
 

@@ -6,6 +6,9 @@
     top: 0;
     z-index: 1200;
     box-shadow: 5px 1px 15px rgba(68, 68, 68, 0.6);
+    @media screen and ( min-width: 641px ){
+      display:none;
+    }
     .hamburgerIcon {
       font-size: 3.8rem;
       position: absolute;

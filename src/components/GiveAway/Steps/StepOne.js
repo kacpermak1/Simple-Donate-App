@@ -13,31 +13,31 @@ class StepOne extends Component {
 
         return (
             <div className="singleStep container">
-                <h3>Krok 1/4</h3>
-                <h2>Zaznacz co chcesz oddać:</h2>
+                <h3>Step 1/4</h3>
+                <h2>Select what kind of items you are donating:</h2>
                 <div className="stepOneRadioInput">
                     <div className="radio">
-                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('ubrania, które nadają się do ponownego użycia') > -1 ? selected : null}></div>
-                        <p>ubrania, które nadają się do ponownego użycia</p>
+                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Clothes that can be reused') > -1 ? selected : null}></div>
+                        <p>Clothes that can be reused</p>
                     </div>
                     <div className="radio">
-                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('ubrania, do wyrzucenia') > -1 ? selected : null}></div>
-                        <p>ubrania, do wyrzucenia</p>
+                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Clothes to throw away') > -1 ? selected : null}></div>
+                        <p>Clothes to throw away</p>
                     </div>
                     <div className="radio">
-                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('zabawki') > -1 ? selected : null}></div>
-                        <p>zabawki</p>
+                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Toys') > -1 ? selected : null}></div>
+                        <p>Toys</p>
                     </div>
                     <div className="radio">
-                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('książki') > -1 ? selected : null}></div>
-                        <p>książki</p>
+                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Books') > -1 ? selected : null}></div>
+                        <p>Books</p>
                     </div>
                     <div className="radio">
-                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Inne') > -1 ? selected : null}></div>
-                        <p>Inne</p>
+                        <div className="radioCustomButton" onClick={this.props.radioChange} style={this.props.inputValue.indexOf('Other') > -1 ? selected : null}></div>
+                        <p>Other</p>
                     </div>
                 </div>
-                <div className="buttonsBottom"><button disabled={buttonDisabled} onClick={this.props.nextStep}>Dalej</button></div>
+                <div className="buttonsBottom"><button disabled={buttonDisabled} onClick={this.props.nextStep}>Next</button></div>
             </div>
 
         )

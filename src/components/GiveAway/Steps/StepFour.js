@@ -17,17 +17,15 @@ class StepFour extends Component {
         let err = [];
 
         if (this.props.street.length < 2) {
-            err.push('Podaj nazwę ulicy')
+            err.push('Incorrect street name')
         } else if (this.props.city.length < 2) {
-            err.push('Podaj nazwę miasta')
-        } else if (!this.props.postcode.match('^[0-9]{2}-[0-9]{3}$')) {
-            err.push('Podaj kod pocztowy w formacie XX-XXX')
-        } else if (this.props.mobile.length !== 9) {
-            err.push('Numer telefonu musi posiadać 9 cyfr')
+            err.push('Incorrect city name')
+        } else if (this.props.mobile.length < 9) {
+            err.push('Mobile number must contain at least 9 digits')
         } else if (!this.props.date) {
-            err.push('Podaj datę w formacie DD.MM.RRRR')
+            err.push('Provide the correct date DD.MM.YYYY')
         } else if (!this.props.time.match('^[0-9]{2}:[0-9]{2}$')) {
-            err.push('Podaj poprawną godzinę odbioru np. 10:30')
+            err.push('Provide the correct time e.g. 10:30')
         };
 
         if (err.length > 0) { this.setState({ errors: err }) } else {
@@ -47,44 +45,44 @@ class StepFour extends Component {
         
         return (
             <div className="singleStep container">
-                <h3>Krok 4/4</h3>
-                <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
+                <h3>Step 4/4</h3>
+                <h2>Enter your address and date for the courier</h2>
                 <form id="stepFourForm">
                     <div>
-                        <p>Adres odbioru:</p>
+                        <p>Pickup Address:</p>
                         <div>
-                            <label>Ulica:</label>
+                            <label>Street:</label>
                             <input type="text" name="street" value={this.props.street} onChange={this.props.streetChange} />
                         </div>
                         <div>
-                            <label>Miasto:</label>
+                            <label>City:</label>
                             <input type="text" name="city" value={this.props.city} onChange={this.props.cityChange} />
                         </div>
                         <div>
-                            <label>Kod pocztowy:</label>
+                            <label>Postcode:</label>
                             <input type="text" name="postcode" value={this.props.postcode} onChange={this.props.postcodeChange} />
                         </div>
                         <div>
-                            <label>Numer telefonu:</label>
+                            <label>Mobile:</label>
                             <input type="number" name="phoneNumber" value={this.props.mobile} onChange={this.props.mobileChange} />
                         </div>
                     </div>
                     <div>
-                        <p>Termin odbioru:</p>
+                        <p>Date and time:</p>
                         <div>
-                            <label>Data:</label>{jsx}
+                            <label>Date:</label>{jsx}
                         </div>
                         <div>
-                            <label>Godzina:</label>{timeJsx}
+                            <label>Time:</label>{timeJsx}
                         </div>
                         <div id="textareaStepFour">
-                            <label>Uwagi dla kuriera</label>
+                            <label>Note for courier</label>
                             <textarea value={this.props.message} onChange={this.props.messageChange} />
                         </div>
                         {errList}
                     </div>
                 </form>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.handleSubmit}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Back</button><button onClick={this.handleSubmit}>Next</button></div>
             </div>
         )
     }

@@ -21,8 +21,8 @@ class LoginNav extends Component {
         const loggedOut =
             <>
                 <div className="loginNav">
-                    <Link to='/login'><div>Zaloguj</div></Link>
-                    <Link to='/register'><div>Załóż konto</div></Link>
+                    <Link to='/login'><div>Sign in</div></Link>
+                    <Link to='/register'><div>Sign up</div></Link>
                 </div>
             </>;
 
@@ -30,8 +30,8 @@ class LoginNav extends Component {
             <>
                 <div className="loginNav">
                     <h3>Cześć {sessionStorage.getItem('email')}!</h3>
-                    <Link to='/giveaway' style={this.props.windowWidth > 640 ? loggedInButtonStyle : null}><div>Oddaj rzeczy</div></Link>
-                    <Link to='/logout' onClick={this.handleLogOut} style={borderNone}><div>Wyloguj</div></Link>
+                    <Link to='/giveaway' style={this.props.windowWidth > 640 ? loggedInButtonStyle : null}><div>Donate items</div></Link>
+                    <Link to='/logout' onClick={this.handleLogOut} style={borderNone}><div>Log Out</div></Link>
                 </div>
             </>;
 

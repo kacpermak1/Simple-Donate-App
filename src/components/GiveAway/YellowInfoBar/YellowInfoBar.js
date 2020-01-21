@@ -8,7 +8,7 @@ class YellowInfoBar extends Component {
             <div className="giveAwayInfoBar">
                 <div className="container">
                     {(this.props.windowWidth <= 640)&&<FontAwesomeIcon icon={faInfoCircle}/>}
-                    <h2>Ważne!</h2>
+                    <h2>Important!</h2>
                     <p>{this.props.text}</p>
                 </div>
             </div>

@@ -50,12 +50,14 @@
           font-size: 0.9rem;
           margin-left: 1.5rem;
           @include mobile {
+            display:block;
             color: white;
             margin-left: 0;
             font-size: 1.3rem;
             margin-bottom: 1rem;
             width: 12rem;
             height: 8rem;
+            min-height:6rem;
             border: 0.75px solid $color-main;
             padding: 4px 6px;
             text-align: center;

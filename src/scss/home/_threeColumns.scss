@@ -10,7 +10,7 @@
   @include mobile{
     display: none;
   }
-  div {
+  .container {
     @extend .threeColumns;
     height: 100%;
     .column {

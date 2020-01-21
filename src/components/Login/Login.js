@@ -51,14 +51,14 @@ class LoginFormBase extends Component {
 
         if (emailText.length <= 0 || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(emailText) !== true) {
             err.push('err');
-            this.setState({ wrongEmailText: 'Podany email jest nieprawidłowy!' });
+            this.setState({ wrongEmailText: 'Incorrect email address' });
         } else {
             this.setState({ wrongEmailText: '' });
         };
 
         if (passwordText.length <= 5) {
             err.push('err');
-            this.setState({ wrongPasswordText: "Podane hasło jest za krótkie" });
+            this.setState({ wrongPasswordText: "Password must contain at least 6 characters" });
         } else {
             this.setState({ wrongPasswordText: '' });
         }
@@ -72,7 +72,7 @@ class LoginFormBase extends Component {
                     this.props.history.push('/');
                 })
                 .catch(error => {
-                    this.setState({ error: true, wrongEmailText: 'Niepoprawny adres email lub hasło!' });
+                    this.setState({ error: true, wrongEmailText: 'Incorrect email or password' });
                 })
         };
     };
@@ -87,7 +87,7 @@ class LoginFormBase extends Component {
 
         return (
             <div className="login">
-                <h2>Zaloguj się</h2>
+                <h2>Sign in</h2>
                 <div className="decoration"></div>
                 <form style={style} method="POST" onSubmit={this.handleSubmit} id="loginForm">
                     <div>
@@ -96,12 +96,12 @@ class LoginFormBase extends Component {
                         {emailErrorJsx}
                     </div>
                     <div>
-                        <label htmlFor="loginPassword">Hasło</label>
+                        <label htmlFor="loginPassword">Password</label>
                         <input style={wrongPasswordText ? borderNone : null} type="password" id="loginPassword" autoComplete="true" value={passwordText} onChange={this.handlePasswordChange}></input>
                         {passwordErrorJsx}
                     </div>
                 </form>
-                <div className="loginButtons"><Link to='/register'>Załóż konto</Link><input form="loginForm" type="submit" value="Zaloguj się"></input></div>
+                <div className="loginButtons"><Link to='/register'>Sign up</Link><input form="loginForm" type="submit" value="Sign in"></input></div>
             </div>
         )
     }

@@ -11,17 +11,17 @@ class Title extends Component {
 
         const loggedOut =
             <>
-                <Link to="/login"><p><span>Oddaj</span> rzeczy</p></Link>
-                <Link to="/login"><p><span>Zorganizuj</span> zbiórkę</p></Link>
+                <Link to="/login"><p><span>Donate</span> Items</p></Link>
+                <Link to="/login"><p><span>Organize</span> Collection</p></Link>
             </>;
 
         const loggedIn =
             <>
-                <HashLink to="/giveaway#top"><p><span>Oddaj</span> rzeczy</p></HashLink>
-                <Link to="/"><p><span>Zorganizuj</span> zbiórkę</p></Link>
+                <HashLink to="/giveaway#top"><p><span>Donate</span> Items</p></HashLink>
+                <Link to="/"><p><span>Organize</span> Collection</p></Link>
             </>
 
-        const logedOutMobile = <Link to="/register"><p>ZAŁÓŻ KONTO</p></Link>;
+        const logedOutMobile = <Link to="/register"><p>SIGN UP</p></Link>;
 
         const session = sessionStorage.getItem('email');
         let jsx;
@@ -32,8 +32,8 @@ class Title extends Component {
 
         if (windowWidth <= 640 && session) {
             return (<div className="titleHeader" style={{ postion: "relative", alignItems: "center" }}>
-                <h1 style={{ fontSize: "2.4rem" }}>Zacznij pomagać!</h1>
-                <h2 style={{ fontSize: "1.6rem" }}>Oddaj niechciane rzeczy w zaufane ręce</h2>
+                <h1 style={{ fontSize: "2.4rem" }}>Start helping!</h1>
+                <h2 style={{ fontSize: "1.6rem" }}>Give unwanted items to trusted hands</h2>
                 <Statisctics data={this.props.data} />
                 <div className="titleLinks" style={{ bottom: "-7rem", left: "0", width: "100%", justifyContent: "space-around" }}>
                     {jsx}
@@ -42,8 +42,8 @@ class Title extends Component {
         } else {
             return (
                 <div className="titleHeader">
-                    {windowWidth > 640 ? <h1>Zacznij pomagać!</h1> : <h1>Masz w domu rzeczy, z którymi nie wiesz co zrobić?</h1>}
-                    {windowWidth > 640 ? <h2>Oddaj niechciane rzeczy w zaufane ręce</h2> : <h2>ODDAJ JE POTRZEBUJĄCYM <br />- szybko i w zaufane ręce</h2>}
+                    {windowWidth > 640 ? <h1>Start helping!</h1> : <h1>Do you have things at home that you don't know what to do with?</h1>}
+                    {windowWidth > 640 ? <h2>Give unwanted items to trusted hands</h2> : <h2>HAND THEM OVER <br />- Quickly and into trusted hands.</h2>}
                     <img src={decoration} className="decoration" alt="decoration" />
                     <div className="titleLinks">
                         {jsx}

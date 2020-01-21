@@ -7,7 +7,7 @@
   margin: 0 auto;
   &:after {
     content: "";
-    background-image: url("./../assets/Background-Contact-Form.jpg");
+    background-image: url("../../assets/Background-Contact-Form.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -134,7 +134,7 @@
     .facebook {
       width: 1.4em;
       height: 1.4em;
-      background-image: url("./../assets/Facebook.svg");
+      background-image: url("../../assets/Facebook.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -148,7 +148,7 @@
     .instagram {
       width: 1.4em;
       height: 1.4em;
-      background-image: url("./../assets/Instagram.svg");
+      background-image: url("../../assets/Instagram.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
@@ -190,7 +190,7 @@
   .mobileContactIcon{
     width:5rem;
     height:5rem;
-    background-image: url("./../assets/tshirts.png");
+    background-image: url("../../assets/tshirts.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;

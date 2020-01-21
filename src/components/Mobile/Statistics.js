@@ -1,29 +1,6 @@
 import React, { Component } from 'react';
-import { css } from "@emotion/core";
-import BounceLoader from "react-spinners/BounceLoader";
+import LoadingBar from './LoadingBar';
 
-const override = css`
-  display: block;
-  margin: 0 auto;
-`;
-class LoadingBar extends Component {
-
-    state = {
-        loading: true
-    }
-
-    componentDidMount() {
-        this.timeOut = setTimeout(() => { this.setState({ loading: false }) }, 2600)
-    }
-
-    componentWillUnmount(){
-        clearTimeout(this.timeOut)
-    }
-
-    render() {
-        return <>{this.state.loading ? <BounceLoader css={override} color={"#FAD648"} size={50} loading={this.state.loading} /> : 0}</>
-    }
-}
 class Statistics extends Component {
 
     state = {
@@ -40,16 +17,16 @@ class Statistics extends Component {
         return (
             <div className="statistics">
                 <div className="statisticsColumn">
-                    <div className="statisticsCircle">{data.length ? data.reduce((a, b) => a + b, 0) : <LoadingBar />}</div>
-                    <p>oddanych worków</p>
+                    <div className="statisticsCircle">{data.length ? data.reduce((a, b) => a + b, 0) : <LoadingBar timeout={2600} />}</div>
+                    <p>Donated bags</p>
                 </div>
                 <div className="statisticsColumn">
-                    <div className="statisticsCircle">{data.length ? data.length : <LoadingBar />}</div>
-                    <p>wspartych organizacji</p>
+                    <div className="statisticsCircle">{data.length ? data.length : <LoadingBar timeout={2600} />}</div>
+                    <p>Donations</p>
                 </div>
                 <div className="statisticsColumn">
-                    <div className="statisticsCircle">{<LoadingBar />}</div>
-                    <p>zbiórek</p>
+                    <div className="statisticsCircle">{<LoadingBar timeout={2600} />}</div>
+                    <p>Collections</p>
                 </div>
             </div>
         )

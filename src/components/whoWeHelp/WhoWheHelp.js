@@ -39,7 +39,7 @@ class WhoWeHelp extends Component {
         const indexOfFirst = indexOfLast - itemsPerPage;
         const currentData = dataToLoad.items.slice(indexOfFirst, indexOfLast);
         const elements = dataToLoad.items;
-        const elementsOnPage = currentData.map((e, i) => { return <div className="eachOrganisation" key={i}><div><h2>{e.name}</h2><h2>{clickedElement === 1 ? "Cel i misja:" : ""} {e.mission}</h2></div><h2 className="donations">{e.donations}</h2></div> })
+        const elementsOnPage = currentData.map((e, i) => { return <div className="eachOrganisation" key={i}><div><h2>{e.name}</h2><h2>{clickedElement === 1 ? "Goal and mission:" : ""} {e.mission}</h2></div><h2 className="donations">{e.donations}</h2></div> })
 
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(elements.length / itemsPerPage); i++) {
@@ -49,12 +49,12 @@ class WhoWeHelp extends Component {
         return (
             <section className="whoWeHelp container" id="whoWeHelp">
                 <nav>
-                    <h2>Komu pomagamy?</h2>
+                    <h2>Who We Help</h2>
                     <div className="decoration"></div>
                     <ul>
-                        <li style={clickedElement === 1 ? clickedStyle : borderNone} onClick={this.handleClickOne}>Fundacjom</li>
-                        <li style={clickedElement === 2 ? clickedStyle : borderNone} onClick={this.handleClickTwo}>Organizacjom<br /> pozarządowym</li>
-                        <li style={clickedElement === 3 ? clickedStyle : borderNone} onClick={this.handleClickThree}>Lokalnym<br /> zbiórkom</li>
+                        <li style={clickedElement === 1 ? clickedStyle : borderNone} onClick={this.handleClickOne}>Charitable organizations</li>
+                        <li style={clickedElement === 2 ? clickedStyle : borderNone} onClick={this.handleClickTwo}>Non-governmental<br/> organizations</li>
+                        <li style={clickedElement === 3 ? clickedStyle : borderNone} onClick={this.handleClickThree}>Local<br /> collections</li>
                     </ul>
                 </nav>
                 <p>{dataToLoad.description}</p>

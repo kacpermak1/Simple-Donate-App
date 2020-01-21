@@ -9,10 +9,10 @@ class BeforeContact extends Component {
 
         return (
             <section className="beforeContact">
-                {session? <p>Chcesz pozbyć się<br/> problemu i zrobić coś <br/> dobrego dla innych?</p> : <p>Chcesz oddać swoje rzeczy<br />lub zorganizować zbiórkę lokalną?</p>}
+                {session? <p>Do you want to get rid of the <br/> problem and do something <br/> good for others?</p> : <p>Do you want to give your<br /> unwanted items to charity or <br /> organize a local collection?</p>}
                 <div className="titleLinks">
-                    {session ? <><HashLink to="/giveaway#top">Oddaj <br />rzeczy</HashLink>
-                        <Link to="/">Zorganizuj zbiórkę</Link></> : <Link to='/register'>Załóż konto</Link>}
+                    {session ? <><HashLink to="/giveaway#top">Donate <br />Items</HashLink>
+                        <Link to="/">Organize Collection</Link></> : <Link to='/register'>Sign up</Link>}
                 </div>
             </section>
         )

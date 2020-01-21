@@ -2,51 +2,51 @@
     "organisations": [
       {
         "id": 1,
-        "name": "Fundacjom",
-        "description": "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+        "name": "Charitable organizations",
+        "description": "In our database you will find a list of verified foundations with which we cooperate. You can check what they do, who they help and what they need.",
         "items": [
           {
-            "name": "Fundacja “Dbam o Zdrowie”",
-            "mission": "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
-            "donations": "ubrania, jedzenie, sprzęt AGD, meble, zabawki"
+            "name": "Organization “HealthCare Charity”",
+            "mission": "Help people in a difficult life situation.",
+            "donations": "clothes, food, household appliances, furniture, toys"
           },
           {
-            "name": "Fundacja “Dla dzieci”",
-            "mission": "Pomoc dzieciom z ubogich rodzin.",
-            "donations": "ubrania, meble, zabawki"
+            "name": "Organization “For Kids”",
+            "mission": "Help children from poor families.",
+            "donations": "clothes, furniture, toys"
           },
           {
-            "name": "Fundacja “Bez domu”",
-            "mission": "Pomoc dla osób nie posiadających miejsca zamieszkania.",
-            "donations": "ubrania, jedzenie, ciepłe koce"
+            "name": "Organization “Homeless”",
+            "mission": "Help for homeless people",
+            "donations": "clothes, food, warm blankets"
           },
           {
-            "name": "Fundacja “Lorem ipsum 4“",
+            "name": "Organization “Lorem ipsum 4“",
             "mission": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "donations": "Ut, enim, ad, minim, veniam, quis"
           },
           {
-            "name": "Fundacja “Lorem Ipsum 5”",
+            "name": "Organization “Lorem Ipsum 5”",
             "mission": "Scelerisque in dictum non consectetur a erat nam.",
             "donations": "Mi, quis, hendrerit, dolor"
           },
           {
-            "name": "Fundacja “Lorem Ipsum 6”",
+            "name": "Organization “Lorem Ipsum 6”",
             "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
             "donations": "Ut, aliquam, purus, sit, amet"
           },
           {
-            "name": "Fundacja “Lorem Ipsum 7”",
+            "name": "Organization “Lorem Ipsum 7”",
             "mission": "Scelerisque in dictum non consectetur a erat nam.",
             "donations": "Egestas, sed, tempus "
           },
           {
-            "name": "Fundacja “Lorem ipsum 8“",
+            "name": "Organization “Lorem ipsum 8“",
             "mission": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "donations": "Ut, enim, ad, minim, veniam, quis"
           },
           {
-            "name": "Fundacja “Lorem Ipsum 9”",
+            "name": "Organization “Lorem Ipsum 9”",
             "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
             "donations": "Egestas, sed, tempus "
           }
@@ -54,36 +54,36 @@
       },
       {
         "id": 2,
-        "name": "Organizacjom pozarządowym",
-        "description": "Pomagamy również wszelkim organizacjom pozarządowym i charytatywnym, które nie są Fundacjami. Są to nasi Partnerzy, który zrobią dobry pożytek z rzeczy, które do nich trafią.",
+        "name": "Non-governmental organizations",
+        "description": "We also help all non-governmental and charity organizations that are not foundations. These are our Partners who will make good use of the things that get to them.",
         "items": [
           {
-            "name": "Organizacja “Lorem Ipsum 1”",
+            "name": "Organization “Lorem Ipsum 1”",
             "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
             "donations": "Egestas, sed, tempus "
           },
           {
-            "name": "Organizacja “Lorem Ipsum 2”",
+            "name": "Organization “Lorem Ipsum 2”",
             "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
             "donations": "Ut, aliquam, purus, sit, amet"
           },
           {
-            "name": "Organizacja “Lorem Ipsum 3”",
+            "name": "Organization “Lorem Ipsum 3”",
             "mission": "Scelerisque in dictum non consectetur a erat nam.",
             "donations": "Mi, quis, hendrerit, dolor"
           },
           {
-            "name": "Organizacja “Lorem Ipsum 4”",
+            "name": "Organization “Lorem Ipsum 4”",
             "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
             "donations": "Ut, aliquam, purus, sit, amet"
           },
           {
-            "name": "Organizacja “Lorem Ipsum 5”",
+            "name": "Organization “Lorem Ipsum 5”",
             "mission": "Scelerisque in dictum non consectetur a erat nam.",
             "donations": "Egestas, sed, tempus "
           },
           {
-            "name": "Organizacja “Lorem Ipsum 6“",
+            "name": "Organization “Lorem Ipsum 6“",
             "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
             "donations": "quisque, id, diam, vel, quam"
           }
@@ -91,21 +91,21 @@
       },
       {
         "id": 3,
-        "name": "Lokalnym zbiórkom",
-        "description": "Wspieramy lokalne zbiórki organizowane przez indywidualne osoby, którym zależy na dobru społeczności, w której żyją. Sam też możesz zorganizować taką zbiórkę i pomóc tym, którzy są najbliżej.",
+        "name": "Local collections",
+        "description": "We support local collections organized by individual people who care about the good of the community in which they live. You can organize such a collection yourself and help those who are closest to you.",
         "items": [
           {
-            "name": "Zbiórka “Lorem Ipsum 1”",
+            "name": "Collection “Lorem Ipsum 1”",
             "mission": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
             "donations": "Mi, quis, hendrerit, dolor"
           },
           {
-            "name": "Zbiórka “Lorem Ipsum 2”",
+            "name": "Collection “Lorem Ipsum 2”",
             "mission": "Quis varius quam quisque id diam vel quam elementum pulvinar.",
             "donations": "Egestas, sed, tempus "
           },
           {
-            "name": "Zbiórka “Lorem Ipsum 3”",
+            "name": "Collection “Lorem Ipsum 3”",
             "mission": "Scelerisque in dictum non consectetur a erat nam.",
             "donations": "Ut, aliquam, purus, sit, amet"
           }

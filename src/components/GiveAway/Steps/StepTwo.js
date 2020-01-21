@@ -26,12 +26,12 @@ class StepTwo extends Component {
 
         return (
             <div className="singleStep container">
-                <h3>Krok 2/4</h3>
-                <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
+                <h3>Step 2/4</h3>
+                <h2>Select the number of 60l bags you have packed into:</h2>
                 <div className="selectNumberOfBags">
-                    <h2>Liczba 60l worków:</h2>
+                    <h2>Number of 60l bags:</h2>
                     <div className="selectMain">
-                    <div onClick={this.props.selectClick} className="select"><h4>{this.props.bags ? this.props.bags : "— wybierz —"}</h4><div className="arrowDown" style={animateStyle}></div></div>
+                    <div onClick={this.props.selectClick} className="select"><h4>{this.props.bags ? this.props.bags : "— select —"}</h4><div className="arrowDown" style={animateStyle}></div></div>
                     <div className={optionsSlide}>
                         <div onClick={this.props.select}>1</div>
                         <div onClick={this.props.select}>2</div>
@@ -41,7 +41,7 @@ class StepTwo extends Component {
                     </div>
                     </div>
                 </div>
-                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button onClick={this.props.nextStep} disabled={buttonDisabled}>Dalej</button></div>
+                <div className="buttonsBottom"><button onClick={this.props.prevStep}>Back</button><button onClick={this.props.nextStep} disabled={buttonDisabled}>Next</button></div>
             </div>
         )
     }

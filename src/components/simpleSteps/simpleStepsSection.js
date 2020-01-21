@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AllSteps from './AllSteps';
-import {HashLink as Link} from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
+import Step from './OneStep';
 
 class SimpleStepsSection extends Component {
 
@@ -9,14 +9,21 @@ class SimpleStepsSection extends Component {
         const session = sessionStorage.getItem('email');
         let giveAwayLink;
 
-        if(session){giveAwayLink = <Link to="/giveaway#top"><p><span>Oddaj</span> rzeczy</p></Link>}else{ giveAwayLink = <Link to="/login"><p><span>Oddaj</span> rzeczy</p></Link>}
+        if (session) { giveAwayLink = <Link to="/giveaway#top"><p><span>Donate</span> Items</p></Link> } else { giveAwayLink = <Link to="/login"><p><span>Donate</span> Items</p></Link> }
 
         return (
             <section className="stepsSection" id="steps">
-                    <h2>Wystarczą 4 proste kroki</h2>
-                    <div className="decoration"></div>
-                    <AllSteps />
-                    {giveAwayLink}
+                <h2>You are only 4 steps away!</h2>
+                <div className="decoration"></div>
+                <div className="allSteps">
+                    <div className="container">
+                        <Step step={"Choose items"} text={"clothes, toys, equipment and more"} />
+                        <Step step={"Pack them up"} text={"use bin bags"} />
+                        <Step step={"Decide who you want to help"} text={"choose a trusted institution"} />
+                        <Step step={"Order a courier"} text={"courier will arrive at a convenient time"} />
+                    </div>
+                </div>
+                {giveAwayLink}
             </section>
         )
     }

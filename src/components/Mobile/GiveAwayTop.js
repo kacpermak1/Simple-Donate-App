@@ -11,8 +11,8 @@ class GiveAwayTop extends Component{
         return(
             <>
             <div className="giveAwayMobileTop">
-                <p>Oddaj rzeczy, których już nie chcesz <br/>POTRZEBUJĄCYM</p>
-                <p>Wystarczą 4 proste kroki</p>
+                <p>Give your unwanted items to people <br/>IN NEED</p>
+                <p>You are only 4 steps away!</p>
             </div>
             <div className="mobileStepCounter">
                 <div style={this.props.stepNumber >= 1 ? colorChange : null}>1</div>

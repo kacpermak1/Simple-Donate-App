@@ -17,7 +17,7 @@
   .headerImage {
     width: 40%;
     height: 100%;
-    background-image: url("./../assets/Home-Hero-Image.jpg");
+    background-image: url("../../assets/Home-Hero-Image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 86% 0;
@@ -39,7 +39,7 @@
       position: relative;
       &::after {
         content: "";
-        background-image: url("./../assets/Home-Hero-Image.jpg");
+        background-image: url("../../assets/Home-Hero-Image.jpg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -74,12 +74,14 @@
         font-size: 0.9rem;
         margin-left: 1.5rem;
         @include mobile {
+          display:block;
           color: white;
           margin-left: 0;
           font-size: 1.3rem;
           margin-bottom: 1rem;
           width: 12rem;
           height: 8rem;
+          min-height:6rem;
           border: 0.75px solid $color-main;
           padding: 4px 6px;
           text-align: center;
@@ -100,7 +102,7 @@
     h3 {
       font-size: 0.9rem;
       @include mobile{
-        font-size:1.2rem;
+        font-size:1.4rem;
         color:white;
         position: absolute;
         top:-3rem;

@@ -6,7 +6,7 @@ class EndMessage extends Component {
         return (
             <div className="singleStep container">
                 <div className="endMessage">
-                    <p>Dziękujemy za przesłanie formularza<br /> Na maila prześlemy wszelkie<br /> informacje o odbiorze.</p>
+                    <p>Thank you for submiting the form.<br />We will send all the information<br />about the pickup by email.</p>
                     <div className="decoration"></div>
                 </div>
             </div>

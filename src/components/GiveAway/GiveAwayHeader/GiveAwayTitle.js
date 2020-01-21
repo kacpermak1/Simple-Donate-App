@@ -5,15 +5,15 @@ class GiveAwayTitle extends Component {
     render() {
         return (
             <div className="titleHeader">
-                <h1>Oddaj rzeczy, których już nie chcesz</h1>
-                <h2>Potrzebującym</h2>
+                <h1>Give your unwanted items to </h1>
+                <h2>people in need</h2>
                 <img src={decoration} className="decoration" alt="decoration" />
-                <h2 style={{fontWeight:"300"}}>Wystarczą 4 proste kroki:</h2>
+                <h2 style={{fontWeight:"300"}}>You are only 4 steps away!</h2>
                 <div className="giveAwayTitle">
-                    <div><h2>1</h2><p>Wybierz rzeczy</p></div>
-                    <div><h2>2</h2><p>Spakuj je w worki</p></div>
-                    <div><h2>3</h2><p>Wybierz fundację</p></div>
-                    <div><h2>4</h2><p>Zamów kuriera</p></div>
+                    <div><h2>1</h2><p>Choose items</p></div>
+                    <div><h2>2</h2><p>Pack them up</p></div>
+                    <div><h2>3</h2><p>Choose organization</p></div>
+                    <div><h2>4</h2><p>Order a courier</p></div>
                 </div>
             </div>
         )

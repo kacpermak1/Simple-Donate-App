@@ -5,15 +5,15 @@ import { faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 class MobileContact extends Component {
     render(){
         return(
-            <section className="mobileContact" id="contact">
+            <footer className="mobileContact" id="contact">
                 <div className="mobileContactIcon"></div>
-                <div className="mobileContactTopText"><p>Skontaktuj się z nami</p><FontAwesomeIcon icon={faPhoneAlt}/><FontAwesomeIcon icon={faEnvelope}/></div>
+                <div className="mobileContactTopText"><p>Contact Us</p><FontAwesomeIcon icon={faPhoneAlt}/><FontAwesomeIcon icon={faEnvelope}/></div>
                 <div className="mobileContactBottomText">
-                    <p>Regulamin</p>
-                    <p>Polityka prywatności</p>
-                    <p>Instrukcja jak spakować rzeczy do oddania</p>
+                    <p>Privacy policy</p>
+                    <p>Terms and Conditions</p>
+                    <p>Instructions on how to pack your items</p>
                 </div>
-            </section>
+            </footer>
         )
     }
 }

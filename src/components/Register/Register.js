@@ -52,21 +52,21 @@ class RegisterFormBase extends Component {
 
         if (emailText.length <= 0 || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(emailText) !== true) {
             err.push('err');
-            this.setState({ wrongEmailText: 'Podany email jest nieprawidłowy!' });
+            this.setState({ wrongEmailText: 'Incorrect email address!' });
         } else {
             this.setState({ wrongEmailText: '' });
         };
 
         if (passwordText.length <= 5) {
             err.push('err');
-            this.setState({ wrongPasswordText: "Podane hasło jest za krótkie" });
+            this.setState({ wrongPasswordText: "Password must contain at least 6 characters" });
         } else {
             this.setState({ wrongPasswordText: '' });
         }
 
         if (passwordConfirmText.length <= 5 || passwordConfirmText !== passwordText) {
             err.push('err');
-            this.setState({ wrongPasswordConfirmText: "Podane hasło jest niepoprawne" });
+            this.setState({ wrongPasswordConfirmText: "Incorrect password" });
         } else {
             this.setState({ wrongPasswordConfirmText: '' });
         }
@@ -80,7 +80,7 @@ class RegisterFormBase extends Component {
                     this.props.history.push('/');
                 })
                 .catch(error => {
-                    this.setState({ error: true, wrongEmailText: 'Konto z tym adresem email już istnieje!' });
+                    this.setState({ error: true, wrongEmailText: 'An account with this email address already exists!' });
                 })
         };
     };
@@ -99,7 +99,7 @@ class RegisterFormBase extends Component {
 
         return (
             <div className="login">
-                <h2>Załóż konto</h2>
+                <h2>Sign up</h2>
                 <div className="decoration"></div>
                 <form method='POST' id="registerForm" onSubmit={this.handleSubmit}>
                     <div>
@@ -108,17 +108,17 @@ class RegisterFormBase extends Component {
                         {emailErrorJsx}
                     </div>
                     <div>
-                        <label htmlFor="registerPassword">Hasło</label>
+                        <label htmlFor="registerPassword">Password</label>
                         <input style={wrongPasswordText ? borderNone : null} type="password" id="registerPassword" autoComplete="true" onChange={this.handlePasswordChange} value={passwordText}></input>
                         {passwordErrorJsx}
                     </div>
                     <div>
-                        <label htmlFor="registerPasswordConfirm">Powtórz hasło</label>
+                        <label htmlFor="registerPasswordConfirm">Confirm Password</label>
                         <input style={wrongPasswordConfirmText ? borderNone : null} type="password" id="registerPasswordConfirm" autoComplete="true" onChange={this.handlePasswordConfirmChange} value={passwordConfirmText}></input>
                         {passwordConfirmErrorJsx}
                     </div>
                 </form>
-                <div className="loginButtons"><Link to='/login'>Zaloguj się</Link><input form="registerForm" type="submit" value="Załóż konto"></input></div>
+                <div className="loginButtons"><Link to='/login'>Sign in</Link><input form="registerForm" type="submit" value="Sign Up"></input></div>
             </div>
         )
     }
@@ -149,7 +149,7 @@ class Register extends Component {
             <section className="loginSection">
                 <div className="headerLogin">
                     <div className="headerLoginRight">
-                    {this.state.windowWidth <= 640 ? <MobileManu windowWidth={this.state.windowWidth} navigationType={<Nav windowWidth={this.state.windowWidth} />}/> : <><LoginNav /><Nav /></>}
+                        {this.state.windowWidth <= 640 ? <MobileManu windowWidth={this.state.windowWidth} navigationType={<Nav windowWidth={this.state.windowWidth} />} /> : <><LoginNav /><Nav /></>}
                     </div>
                 </div>
                 <FirebaseContext.Consumer>

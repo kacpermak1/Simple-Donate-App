@@ -12,23 +12,39 @@ class Home extends Component {
 
     state = {
         windowWidth: window.innerWidth,
-        data:[]
+        data:[],
+        dataForDesktop:[]
     }
 
     componentDidMount() {
         window.addEventListener('resize', this.handleWindowSizeChange); 
-       setTimeout(()=>{this.getDataForStatistics()},700) ;
+       this.timeOutLoggedIn = setTimeout(()=>{this.getDataForLoggedInStatistics()},700);
+       this.timeOutLoggedOut = setTimeout(()=>{this.getDataForLoggedOutStatistics()},700);
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleWindowSizeChange)
+        clearTimeout(this.timeOutLoggedIn);
+        clearTimeout(this.timeOutLoggedOut);
     }
 
     handleWindowSizeChange = () => {
         this.setState({ windowWidth: window.innerWidth })
     }
 
-    getDataForStatistics = () => {
+    getDataForLoggedOutStatistics = () => {
+        let arr = [];
+        this.props.firebase.db.collection("users")
+            .get()
+            .then(function (querySnapshot) {
+                querySnapshot.forEach(function (doc) {
+                    arr.push(doc.data().request.bags);
+                })
+            })
+        this.setState({ dataForDesktop: arr })
+    }
+
+    getDataForLoggedInStatistics = () => {
         let arr = [];
         let email = sessionStorage.getItem("email");
         this.props.firebase.db.collection("users").where("email", "==", email)
@@ -42,11 +58,12 @@ class Home extends Component {
     }
 
     render() {
+        const isLoggedIn = sessionStorage.getItem("email");
 
         return (
             <>
                 <HeaderMain windowWidth={this.state.windowWidth} data={this.state.data}/>
-                <ThreeColumns />
+                <ThreeColumns data={isLoggedIn ? this.state.data : this.state.dataForDesktop} />
                 <SimpleStepsSection />
                 <AboutUsSection />
                 <WhoWeHelp itemsPerPage={this.state.windowWidth <= 640 ? 2 : 3} />

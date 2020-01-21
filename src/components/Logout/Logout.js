@@ -29,9 +29,9 @@ class Logout extends Component {
                     </div>
                 </div>
                 <div className="logout">
-                    <h2>Wylogowanie nastąpiło<br/>pomyślnie!</h2>
+                    <h2>Logged out<br/>successfully!</h2>
                     <div className="decoration"></div>
-                    <Link to='/'>Strona główna</Link>
+                    <Link to='/'>Home page</Link>
                 </div>
             </section>
         )

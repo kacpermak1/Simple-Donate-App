@@ -13,55 +13,55 @@ class Summary extends Component {
 
         let renderBags;
 
-        if (bags === 1) { renderBags = 'worek'; } else if (bags > 1 && bags < 5) { renderBags = 'worki' } else { renderBags = 'worków' }
+        if (bags === 1) { renderBags = 'bag'; } else if (bags > 1) { renderBags = 'bags' }
 
         return (
             <div className="singleStep container">
-                <h2>Podsumowanie Twojej darowizny</h2>
+                <h2>Summary of your donation</h2>
                 <div className="summaryMain">
                     <div className="summaryTop">
-                        <h4>Oddajesz:</h4>
-                        <div><div className="shirtIcon"></div><p>{bags} {renderBags}, {stepOne}, {whoToHelpList.map((e, i) => { return <span key={i}>{e}, </span> })} </p></div>
-                        <div><div className="circleIcon"></div><p>{optional ? 'dla: ' + optional : 'dla lokalizacji: ' + location}</p></div>
+                        <h4>You are giving:</h4>
+                        <div><div className="shirtIcon"></div><p>{bags} {renderBags},of {stepOne}, to: {whoToHelpList.map((e, i) => { return <span key={i}>{e}, </span> })} </p></div>
+                        <div><div className="circleIcon"></div><p>{optional ? 'for: ' + optional : 'for location: ' + location}</p></div>
                     </div>
                     <div className="summaryBottom">
                         <div className="summaryBottomLeft">
-                            <h4>Adres odbioru:</h4>
+                            <h4>Pickup Address:</h4>
                             <div>
-                                <p>Ulica</p>
+                                <p>Street</p>
                                 <p>{street}</p>
                             </div>
                             <div>
-                                <p>Miasto</p>
+                                <p>City</p>
                                 <p>{city}</p>
                             </div>
                             <div>
-                                <p>Kod pocztowy</p>
+                                <p>Postcode</p>
                                 <p>{postcode}</p>
                             </div>
                             <div>
-                                <p>Numer telefonu</p>
+                                <p>Mobile</p>
                                 <p>{mobile}</p>
                             </div>
                         </div>
                         <div className="summaryBottomRight">
-                            <h4>Termin odbioru:</h4>
+                            <h4>Date and time:</h4>
                             <div>
-                                <p>Data</p>
+                                <p>Date</p>
                                 <p>{date}</p>
                             </div>
                             <div>
-                                <p>Godzina</p>
+                                <p>Time</p>
                                 <p>{time}</p>
                             </div>
                             <div>
-                                <p>Uwagi<br /> dla kuriera</p>
+                                <p>Note<br /> for courier</p>
                                 <p>{message}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep}>Wstecz</button><button id="submitButton" onClick={this.props.submit}>Potwierdzam</button></div>
+                <div style={buttonsMargin} className="buttonsBottom"><button onClick={this.props.prevStep}>Back</button><button id="submitButton" onClick={this.props.submit}>Submit</button></div>
             </div>
         )
     }

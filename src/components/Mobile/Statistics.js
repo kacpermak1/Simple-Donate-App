@@ -8,7 +8,11 @@ class Statistics extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => { this.setState({ data: this.props.data }) }, 2000)
+        this.timeOut = setTimeout(() => { this.setState({ data: this.props.data }) }, 2000)
+    }
+
+    componentWillUnmount(){
+        clearTimeout(this.timeOut)
     }
 
     render() {

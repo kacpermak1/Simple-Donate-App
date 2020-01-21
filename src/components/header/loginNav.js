@@ -29,7 +29,7 @@ class LoginNav extends Component {
         const loggedIn =
             <>
                 <div className="loginNav">
-                    <h3>Cześć {sessionStorage.getItem('email')}!</h3>
+                    <h3>Hello {sessionStorage.getItem('email')}!</h3>
                     <Link to='/giveaway' style={this.props.windowWidth > 640 ? loggedInButtonStyle : null}><div>Donate items</div></Link>
                     <Link to='/logout' onClick={this.handleLogOut} style={borderNone}><div>Log Out</div></Link>
                 </div>

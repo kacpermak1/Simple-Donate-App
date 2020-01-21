@@ -14,6 +14,12 @@ $desktop: 1080px;
   }
 }
 
+@mixin landscape {
+  @media screen and ( min-width: 641px ) and (max-width: 860px) and ( max-height: 400px ){
+    @content;
+  }
+}
+
 @mixin desktopfix {
   @media (min-width: #{$tablet-width + 1px}) and (max-width: #{$desktop}) {
     @content;
@@ -29,5 +35,11 @@ $desktop: 1080px;
 @include tablet {
   html {
     font-size: 80%;
+  }
+}
+
+@include landscape{
+  html{
+    font-size:65%;
   }
 }

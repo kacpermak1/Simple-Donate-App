@@ -134,6 +134,11 @@
         color: white;
         font-size: 1.5rem;
       }
+      li{
+        @media screen and ( min-width: 641px ) and (max-width: 1150px){
+          width:20%;
+        }
+      }
       li:nth-of-type(1) {
         padding: 8px 16px;
         border: 0.75px solid $color-text;

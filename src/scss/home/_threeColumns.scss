@@ -7,8 +7,12 @@
   justify-content: space-around;
   background-color: $color-main;
   margin: 0 auto;
-  @include mobile{
+  @include mobile {
     display: none;
+  }
+  @include landscape {
+    height: 50vh;
+    margin: 2rem 0 2rem 0;
   }
   .container {
     @extend .threeColumns;
@@ -26,6 +30,10 @@
         margin-bottom: 2rem;
         font-weight: 300;
         text-align: center;
+        @include landscape {
+          font-size: 3.2rem;
+          margin-bottom: 1rem;
+        }
       }
       h3 {
         font-size: 1.2rem;
@@ -33,6 +41,9 @@
         color: $color-text;
         text-transform: uppercase;
         text-align: center;
+        @include landscape {
+          margin-bottom: 1rem;
+        }
       }
       p {
         font-family: $font-alt;
@@ -40,6 +51,9 @@
         text-align: center;
         line-height: 1.6;
         color: $color-text;
+        @include landscape {
+          font-size: 0.9rem;
+        }
       }
     }
   }

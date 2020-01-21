@@ -48,12 +48,12 @@ class WhoWeHelp extends Component {
         }
         return (
             <section className="whoWeHelp container" id="whoWeHelp">
+                <h2 className="whoWeHelpHeader">Who We Help</h2>
+                <div className="decoration"></div>
                 <nav>
-                    <h2>Who We Help</h2>
-                    <div className="decoration"></div>
                     <ul>
                         <li style={clickedElement === 1 ? clickedStyle : borderNone} onClick={this.handleClickOne}>Charitable organizations</li>
-                        <li style={clickedElement === 2 ? clickedStyle : borderNone} onClick={this.handleClickTwo}>Non-governmental<br/> organizations</li>
+                        <li style={clickedElement === 2 ? clickedStyle : borderNone} onClick={this.handleClickTwo}>Non-governmental<br /> organizations</li>
                         <li style={clickedElement === 3 ? clickedStyle : borderNone} onClick={this.handleClickThree}>Local<br /> collections</li>
                     </ul>
                 </nav>

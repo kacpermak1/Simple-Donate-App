@@ -29,3 +29,7 @@ the messages can be easly accessed by an authorized person.
 
 ![Simple Donate Mobile App Demo](demo/mobile-app.gif)
 
+## Preview:
+
+Check the preview here: *https://kacpermak1.github.io/Simple-Donate-App/*
+

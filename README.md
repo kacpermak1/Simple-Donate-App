@@ -8,3 +8,7 @@ App that makes it simple to donate unwanted items to the people who really need 
 - React
 - SASS
 - Firebase
+
+## Demo desktop
+
+![Simple Donate App Demo](demo/app-demo.gif)

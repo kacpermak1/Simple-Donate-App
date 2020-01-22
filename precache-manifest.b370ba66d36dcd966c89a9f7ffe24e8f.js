@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "203e09931a74cd6787860947299390c3",
+    "revision": "622d87cded82c1538fe0db4b1ba8106e",
     "url": "/Simple-Donate-App/index.html"
   },
   {

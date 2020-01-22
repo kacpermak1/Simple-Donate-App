@@ -10,9 +10,9 @@
   @include mobile {
     display: none;
   }
-  @include landscape {
-    height: 50vh;
-    margin: 2rem 0 2rem 0;
+  @media screen and ( min-width: 641px ) and (max-width: 1400px) and ( max-height: 800px ){
+    height: 46vh;
+    font-size:84%;
   }
   .container {
     @extend .threeColumns;
@@ -52,7 +52,7 @@
         line-height: 1.6;
         color: $color-text;
         @include landscape {
-          font-size: 0.9rem;
+          font-size: 1.2rem;
         }
       }
     }

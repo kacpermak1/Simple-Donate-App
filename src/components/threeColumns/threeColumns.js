@@ -25,17 +25,17 @@ class ThreeColumns extends Component {
             <section className="threeColumns" id="threeCols">
                 <div className="container">
                     <div className="column">
-                        {data.length ? <h2>{data.reduce((a, b) => a + b, 0)}</h2> : <LoadingBarHome timeout={2200} />}
+                        {data.length ? <h2>{data.reduce((a, b) => a + b, 0)}</h2> : <LoadingBarHome timeout={2300} />}
                         <h3>Donated Bags</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
                     </div>
                     <div className="column">
-                        {data.length ? <h2>{data.length}</h2> : <LoadingBarHome timeout={2200} />}
+                        {data.length ? <h2>{data.length}</h2> : <LoadingBarHome timeout={2300} />}
                         <h3>Donations</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
                     </div>
                     <div className="column">
-                        {data.length ? <h2>{collectionsNumber}</h2> : <LoadingBarHome timeout={2200} />}
+                        {data.length ? <h2>{collectionsNumber}</h2> : <LoadingBarHome timeout={2300} />}
                         <h3>organized collections</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
                     </div>

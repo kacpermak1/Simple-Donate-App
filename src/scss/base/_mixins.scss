@@ -1,5 +1,7 @@
 @mixin titleLink {
     width: 16vw;
+    max-width:300px;
+    max-height:160px;
     height: 12vh;
     display: flex;
     flex-direction: column;

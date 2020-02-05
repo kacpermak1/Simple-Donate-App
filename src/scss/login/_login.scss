@@ -144,6 +144,8 @@
     form {
       height: 64%;
       width: 26%;
+      max-height:800px;
+      max-width:900px;
       background-color: $color-base;
       display: flex;
       flex-direction: column;
@@ -164,7 +166,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-around;
         position: relative;
         @include mobile{
           justify-content: space-around;

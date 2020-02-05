@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1500px;
+  max-width: 2600px;
+  max-height:1200px;
   margin: 0 auto;
   height: 80vh;
   margin-top: 1rem;
@@ -21,7 +22,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 86% 0;
-    margin: 0 auto;
     @include mobile {
       display: none;
     }
@@ -32,6 +32,7 @@
     justify-content: center;
     align-items: center;
     width: 60%;
+    max-width:900px;
     height: 100%;
     @include mobile {
       width: 100%;

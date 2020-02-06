@@ -31,6 +31,15 @@
       background-repeat: no-repeat;
       background-position: 24% 0;
       z-index: 1;
+      @media screen and (min-width: 2999px) {
+        width: 195%;
+        left: -320px;
+      }
+      @media screen and (min-width: 3800px) {
+        width: 245%;
+        left: -720px;
+        background-position: 24% 60%;
+      }
       @media screen and (max-width: 1150px) {
         width: 105%;
       }

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Simple-Donate-App/static/css/main.5df485d1.chunk.css",
+    "main.css": "/Simple-Donate-App/static/css/main.81577d2a.chunk.css",
     "main.js": "/Simple-Donate-App/static/js/main.773c26f4.chunk.js",
     "main.js.map": "/Simple-Donate-App/static/js/main.773c26f4.chunk.js.map",
     "runtime-main.js": "/Simple-Donate-App/static/js/runtime-main.bccda70f.js",
@@ -8,16 +8,16 @@
     "static/js/2.4949b513.chunk.js": "/Simple-Donate-App/static/js/2.4949b513.chunk.js",
     "static/js/2.4949b513.chunk.js.map": "/Simple-Donate-App/static/js/2.4949b513.chunk.js.map",
     "index.html": "/Simple-Donate-App/index.html",
-    "precache-manifest.a2354eb53cb10d9c997a332937f58f2b.js": "/Simple-Donate-App/precache-manifest.a2354eb53cb10d9c997a332937f58f2b.js",
+    "precache-manifest.3c12d717014256f3ac778078b32cca7b.js": "/Simple-Donate-App/precache-manifest.3c12d717014256f3ac778078b32cca7b.js",
     "service-worker.js": "/Simple-Donate-App/service-worker.js",
-    "static/css/main.5df485d1.chunk.css.map": "/Simple-Donate-App/static/css/main.5df485d1.chunk.css.map",
+    "static/css/main.81577d2a.chunk.css.map": "/Simple-Donate-App/static/css/main.81577d2a.chunk.css.map",
     "static/js/2.4949b513.chunk.js.LICENSE": "/Simple-Donate-App/static/js/2.4949b513.chunk.js.LICENSE",
     "static/media/main.scss": "/Simple-Donate-App/static/media/tshirts.7eb5f221.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bccda70f.js",
     "static/js/2.4949b513.chunk.js",
-    "static/css/main.5df485d1.chunk.css",
+    "static/css/main.81577d2a.chunk.css",
     "static/js/main.773c26f4.chunk.js"
   ]
 }

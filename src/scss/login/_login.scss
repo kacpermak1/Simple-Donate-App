@@ -156,6 +156,9 @@
         width:80%;
         height:74%;
       }
+      @media (min-width: #{$mobile-width + 1px}) and (max-width: 1200px){
+        width: 46%;
+      } 
       @include landscape{
         height:100%;
         padding:0;

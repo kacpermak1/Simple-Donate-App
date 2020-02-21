@@ -108,7 +108,7 @@ class Contact extends Component {
                             <input type="submit" className="submit" value="Send" id="submit"></input>
                         </form>
                     </div>
-                    <footer className="footer"><p>Designed by student of CodersLab UX Bootcamp / Built in full by Kacper Makowka</p><div className="facebook"></div><div className="instagram"></div></footer>
+                    <footer className="footer"><p>Created by Kacper Makowka</p><div className="facebook"></div><div className="instagram"></div></footer>
                 </div>
             </section>
         )
